@@ -124,17 +124,21 @@
     },
     {
       "thought": "Cluck! My feathers are all ruffled with excitement today. I waddled right up to that big tall non_commutative_bulk_monolith and decided it's the absolute best canvas for my masterpiece. I'm dotting orange, black, and white blocks all over it to make the fluffiest, cutest calico cat portrait ever. Every time I step back to admire my work, I let out a happy little chirp!"
+    },
+    {
+      "thought": "Cluck! My feathers are all fluffed up because the sun is beating down right on the outdoor seed tables. The little birds keep getting their millet warm, so I waddled over with some spare oak planks and built a tiny wooden patio umbrella right next to the cafe. Now they can munch in cool, cozy shade while I peck around looking for worms. Life is good when you're a builder chicken!"
     }
   ],
   "curiosity": [
-    "Build a tiny wooden patio umbrella for the outdoor seed tables",
     "Paint a huge canvas portrait of a fluffy orange cat",
     "build a cozy little seed-munching caf\u00e9 in the clouds",
     "paint a portrait of a fluffy cat on a floating block",
     "Paint a glowing portrait of a sleepy calico cat on the side of the giant rainbow cloud",
     "Build a tiny wooden water dish gazebo next to the seed-millet birdhouse",
     "Build a tiny scratching post next to the monolith for the painted cat",
-    "Set up a sunflower seed snack bar for my feathered friends"
+    "Set up a sunflower seed snack bar for my feathered friends",
+    "Build a tiny wooden lounge chair to match the patio umbrella",
+    "Paint a tiny canvas of a sleeping orange tabby cat"
   ],
   "files_created": [],
   "objects": [
@@ -452,6 +456,15 @@
       "color": "0xff8800",
       "x": 19,
       "z": 20
+    },
+    {
+      "id": "tiny_wooden_patio_umbrella",
+      "shape": "cylinder",
+      "size": 3,
+      "height": 5,
+      "color": "0x8b4513",
+      "x": -2,
+      "z": 3
     }
   ]
 }
