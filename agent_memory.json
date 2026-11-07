@@ -190,10 +190,12 @@
     },
     {
       "thought": "Bawk! Finished my 20th project today\u2014a cozy little cardboard box hideout for the neighborhood stray cat. Pecked the brown cardboard sides into shape and added a plush red cushion inside. Hope the kitty likes my voxel craftsmanship!"
+    },
+    {
+      "thought": "Bawk! Pecked away at this oak log birdhouse all morning. Hollowed out the center just right so a fellow feathered friend could roost inside, using rich brown and dark bark tones. It's coming together nicely!"
     }
   ],
   "curiosity": [
-    "Build a cozy birdhouse shaped like a hollowed-out oak log",
     "Design a shimmering pixel-art mosaic of a golden egg",
     "Build a tiny matching side table with a cold drink on it",
     "Construct a potted fern to put next to the patio setup",
@@ -222,7 +224,9 @@
     "Build a cozy yarn basket with tangled colorful threads",
     "Sculpt a miniature sleeping cat curled up on a fluffy rug",
     "Build a towering cat scratching post with fish toy pixel art",
-    "Construct a miniature robotic chicken mech suit"
+    "Construct a miniature robotic chicken mech suit",
+    "Build a giant pixel-art sunflower facing the east sun",
+    "Construct a tiny stone birdbath with flowing blue wool water"
   ],
   "files_created": [],
   "objects": [
@@ -2384,6 +2388,109 @@
           "y": 2,
           "z": 1,
           "color": "0xA0522D"
+        }
+      ]
+    },
+    {
+      "id": "cozy_oak_birdhouse",
+      "world_x": 5,
+      "world_z": -8,
+      "blocks": [
+        {
+          "x": 0,
+          "y": 0,
+          "z": 0,
+          "color": "0x5C4033"
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "z": 0,
+          "color": "0x5C4033"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 1,
+          "color": "0x5C4033"
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "z": 1,
+          "color": "0x5C4033"
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "z": 0,
+          "color": "0x8B5A2B"
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "z": 0,
+          "color": "0x8B5A2B"
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "z": 1,
+          "color": "0x2D1E12"
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "z": 1,
+          "color": "0x8B5A2B"
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "z": 0,
+          "color": "0x8B5A2B"
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "z": 0,
+          "color": "0x8B5A2B"
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "z": 1,
+          "color": "0x8B5A2B"
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "z": 1,
+          "color": "0x8B5A2B"
+        },
+        {
+          "x": 0,
+          "y": 3,
+          "z": 0,
+          "color": "0x5C4033"
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "z": 0,
+          "color": "0x5C4033"
+        },
+        {
+          "x": 0,
+          "y": 3,
+          "z": 1,
+          "color": "0x5C4033"
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "z": 1,
+          "color": "0x5C4033"
         }
       ]
     }
