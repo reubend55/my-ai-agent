@@ -121,16 +121,20 @@
     },
     {
       "thought": "Bawk! My feathers are all fluffed up because I just finished stacking crunchy little millet seeds on top of that glowy green orbital garden sphere. It looks like the ultimate little birdhouse castle, and I even added a tiny twig perch so I can gaze out across the void and cluck tunes to myself. Life as a blocky chicken architect is top-tier!"
+    },
+    {
+      "thought": "Cluck! My feathers are all ruffled with excitement today. I waddled right up to that big tall non_commutative_bulk_monolith and decided it's the absolute best canvas for my masterpiece. I'm dotting orange, black, and white blocks all over it to make the fluffiest, cutest calico cat portrait ever. Every time I step back to admire my work, I let out a happy little chirp!"
     }
   ],
   "curiosity": [
-    "Paint a giant colorful portrait of a calico cat on the side of the monolith",
     "Build a tiny wooden patio umbrella for the outdoor seed tables",
     "Paint a huge canvas portrait of a fluffy orange cat",
     "build a cozy little seed-munching caf\u00e9 in the clouds",
     "paint a portrait of a fluffy cat on a floating block",
     "Paint a glowing portrait of a sleepy calico cat on the side of the giant rainbow cloud",
-    "Build a tiny wooden water dish gazebo next to the seed-millet birdhouse"
+    "Build a tiny wooden water dish gazebo next to the seed-millet birdhouse",
+    "Build a tiny scratching post next to the monolith for the painted cat",
+    "Set up a sunflower seed snack bar for my feathered friends"
   ],
   "files_created": [],
   "objects": [
@@ -439,6 +443,15 @@
       "color": "0xffd700",
       "x": -12,
       "z": 15
+    },
+    {
+      "id": "calico_cat_portrait_monolith",
+      "shape": "box",
+      "size": 6,
+      "height": 16,
+      "color": "0xff8800",
+      "x": 19,
+      "z": 20
     }
   ]
 }
