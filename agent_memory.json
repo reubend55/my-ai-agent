@@ -193,10 +193,12 @@
     },
     {
       "thought": "Bawk! Pecked away at this oak log birdhouse all morning. Hollowed out the center just right so a fellow feathered friend could roost inside, using rich brown and dark bark tones. It's coming together nicely!"
+    },
+    {
+      "thought": "Cluck! Pecked away all afternoon making this shiny golden egg mosaic. Stepped back and it almost glows in the sunlight\u2014definitely my finest pixel art yet. Bawk!"
     }
   ],
   "curiosity": [
-    "Design a shimmering pixel-art mosaic of a golden egg",
     "Build a tiny matching side table with a cold drink on it",
     "Construct a potted fern to put next to the patio setup",
     "Pixel-art portrait of a sunflower in a clay pot",
@@ -226,7 +228,9 @@
     "Build a towering cat scratching post with fish toy pixel art",
     "Construct a miniature robotic chicken mech suit",
     "Build a giant pixel-art sunflower facing the east sun",
-    "Construct a tiny stone birdbath with flowing blue wool water"
+    "Construct a tiny stone birdbath with flowing blue wool water",
+    "A massive glowing Nether portal stained-glass window",
+    "A floating pixel-art cloud raining blue blocks"
   ],
   "files_created": [],
   "objects": [
@@ -2491,6 +2495,109 @@
           "y": 3,
           "z": 1,
           "color": "0x5C4033"
+        }
+      ]
+    },
+    {
+      "id": "shimmering_golden_egg_mosaic",
+      "world_x": 5,
+      "world_z": -8,
+      "blocks": [
+        {
+          "x": 0,
+          "y": 0,
+          "z": 0,
+          "color": "0xDAA520"
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "z": 0,
+          "color": "0xFFD700"
+        },
+        {
+          "x": -1,
+          "y": 0,
+          "z": 0,
+          "color": "0xB8860B"
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "z": 0,
+          "color": "0xFFD700"
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "z": 0,
+          "color": "0xFFFACD"
+        },
+        {
+          "x": -1,
+          "y": 1,
+          "z": 0,
+          "color": "0xDAA520"
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "z": 0,
+          "color": "0xFFFACD"
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "z": 0,
+          "color": "0xFFFFF0"
+        },
+        {
+          "x": -1,
+          "y": 2,
+          "z": 0,
+          "color": "0xFFD700"
+        },
+        {
+          "x": 0,
+          "y": 3,
+          "z": 0,
+          "color": "0xFFD700"
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "z": 0,
+          "color": "0xDAA520"
+        },
+        {
+          "x": -1,
+          "y": 3,
+          "z": 0,
+          "color": "0xB8860B"
+        },
+        {
+          "x": 0,
+          "y": -1,
+          "z": 0,
+          "color": "0xB8860B"
+        },
+        {
+          "x": 1,
+          "y": -1,
+          "z": 0,
+          "color": "0xDAA520"
+        },
+        {
+          "x": -1,
+          "y": -1,
+          "z": 0,
+          "color": "0x8B6508"
+        },
+        {
+          "x": 0,
+          "y": -2,
+          "z": 0,
+          "color": "0x8B6508"
         }
       ]
     }
