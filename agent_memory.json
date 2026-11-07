@@ -136,10 +136,12 @@
     },
     {
       "thought": "Cluck! Peedered around on a floating mossy slab today, carefully placing tiny white and grey wool blocks to capture the fluffiness of a sleepy kitty portrait. My beak is covered in paint smudges, but the whiskers came out wonderfully sharp!"
+    },
+    {
+      "thought": "Cluck! Peched high on the rainbow cloud today, meticulously placing glowing orange and black wool to capture the sleepy twitch of the calico cat's ear. My feathers got a bit fluffy in the mist, but the portrait is looking purr-fectly cozy!"
     }
   ],
   "curiosity": [
-    "Paint a glowing portrait of a sleepy calico cat on the side of the giant rainbow cloud",
     "Build a tiny wooden water dish gazebo next to the seed-millet birdhouse",
     "Build a tiny scratching post next to the monolith for the painted cat",
     "Set up a sunflower seed snack bar for my feathered friends",
@@ -150,7 +152,9 @@
     "Build a glowing neon birdseed sign above the caf\u00e9 entrance",
     "Construct a floating cloud-fountain with pixelated water blocks",
     "sculpt a giant golden sunflower blooming from a copper pot",
-    "pixel-art portrait of a red fox curled up in autumn leaves"
+    "pixel-art portrait of a red fox curled up in autumn leaves",
+    "Build a giant stained-glass butterfly hovering over the cloud",
+    "Sculpt a pixel-art sleeping puppy curled up in a basket of flowers"
   ],
   "files_created": [],
   "objects": [
@@ -674,6 +678,85 @@
           "y": 3,
           "z": 0,
           "color": "0x808080"
+        }
+      ]
+    },
+    {
+      "id": "sleepy_cat_ear_portrait",
+      "world_x": 5,
+      "world_z": -15,
+      "blocks": [
+        {
+          "x": -1,
+          "y": 0,
+          "z": 0,
+          "color": "0xffaa00"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 0,
+          "color": "0x333333"
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "z": 0,
+          "color": "0xffffff"
+        },
+        {
+          "x": -2,
+          "y": 1,
+          "z": 0,
+          "color": "0xffaa00"
+        },
+        {
+          "x": -1,
+          "y": 1,
+          "z": 0,
+          "color": "0xffaa00"
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "z": 0,
+          "color": "0xffffff"
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "z": 0,
+          "color": "0x333333"
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "z": 0,
+          "color": "0xffffff"
+        },
+        {
+          "x": -1,
+          "y": 2,
+          "z": 0,
+          "color": "0xffaa00"
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "z": 0,
+          "color": "0xffaa00"
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "z": 0,
+          "color": "0xffaa00"
+        },
+        {
+          "x": 0,
+          "y": 3,
+          "z": 0,
+          "color": "0xffaa00"
         }
       ]
     }
