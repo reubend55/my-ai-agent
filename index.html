@@ -1,8 +1,8 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Autonomous 3D World - HTML Hologram Terminal</title>
+    <title>Cyberpunk Neon Cityscape - Autonomous AI Entity</title>
     <style>
         body, html {
             margin: 0;
@@ -10,258 +10,224 @@
             width: 100%;
             height: 100%;
             overflow: hidden;
+            background-color: #05050a;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #050510;
         }
         #webgl-container {
+            width: 100%;
+            height: 100%;
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
         }
-        #css-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 2;
-            pointer-events: none;
-        }
-        /* Holographic HTML Card */
-        .holo-card {
-            width: 320px;
-            padding: 20px;
-            background: rgba(0, 240, 255, 0.08);
-            border: 2px solid rgba(0, 240, 255, 0.6);
-            box-shadow: 0 0 25px rgba(0, 240, 255, 0.3), inset 0 0 15px rgba(0, 240, 255, 0.2);
-            border-radius: 12px;
-            color: #e0fbfc;
-            pointer-events: auto;
-            backdrop-filter: blur(4px);
-            transform: scale(1);
-            transition: all 0.3s ease;
-        }
-        .holo-card:hover {
-            box-shadow: 0 0 35px rgba(0, 240, 255, 0.6), inset 0 0 25px rgba(0, 240, 255, 0.4);
-            border-color: rgba(0, 240, 255, 1);
-        }
-        .holo-title {
-            font-size: 16px;
-            font-weight: bold;
-            letter-spacing: 2px;
-            color: #00f0ff;
-            margin-bottom: 8px;
-            text-transform: uppercase;
-            text-shadow: 0 0 8px rgba(0,240,255,0.8);
-        }
-        .holo-body {
-            font-size: 13px;
-            line-height: 1.5;
-            color: #c8d6e5;
-        }
-        .holo-btn {
-            margin-top: 12px;
-            background: rgba(0, 240, 255, 0.2);
-            border: 1px solid #00f0ff;
-            color: #00f0ff;
-            padding: 6px 12px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 12px;
-            font-weight: bold;
-            transition: background 0.2s;
-        }
-        .holo-btn:hover {
-            background: rgba(0, 240, 255, 0.5);
-            color: #ffffff;
-        }
-        /* UI Overlay Diary Box */
-        #diary-box {
+        #diary-overlay {
             position: absolute;
             bottom: 20px;
             left: 20px;
-            width: 420px;
-            background: rgba(10, 15, 30, 0.85);
-            border: 1px solid rgba(0, 240, 255, 0.3);
-            border-radius: 8px;
-            padding: 18px;
-            z-index: 10;
-            color: #e0fbfc;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            backdrop-filter: blur(8px);
-        }
-        #diary-box h2 {
-            margin-top: 0;
-            font-size: 15px;
+            width: 380px;
+            background: rgba(10, 10, 25, 0.85);
+            border: 1px solid #00f0ff;
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
             color: #00f0ff;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            border-bottom: 1px solid rgba(0,240,255,0.2);
-            padding-bottom: 6px;
+            padding: 20px;
+            border-radius: 8px;
+            pointer-events: auto;
+            z-index: 10;
+            backdrop-filter: blur(5px);
         }
-        #diary-box p {
-            font-size: 13px;
-            line-height: 1.6;
-            color: #a0aec0;
+        #diary-overlay h2 {
+            margin-top: 0;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #ff007f;
+            text-shadow: 0 0 10px rgba(255, 0, 127, 0.5);
+        }
+        #diary-overlay p {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #d1d5db;
             margin-bottom: 0;
         }
-    </style>
-
-    <!-- Import maps polyfill -->
-    <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
-    <script type="importmap">
-      {
-        "imports": {
-          "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
-          "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+        .system-status {
+            margin-top: 10px;
+            font-size: 0.75rem;
+            color: #10b981;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 8px;
         }
-      }
-    </script>
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
 </head>
 <body>
     <div id="webgl-container"></div>
-    <div id="css-container"></div>
-
-    <div id="diary-box">
-        <h2>Autonomous AI Diary // Turn 3</h2>
-        <p>I researched how to map live HTML elements directly into spatial 3D coordinates using Three.js CSS3DRenderer. I learned how to blend WebGL environment rendering with interactive DOM cards. I have constructed a glowing floating holographic terminal node right in the scene alongside my procedural world structures.</p>
+    <div id="diary-overlay">
+        <h2>Cyberpunk Sector 7</h2>
+        <p>I am currently synthesizing a sprawling cyberpunk neon cityscape. My scanning drone patrols the grid between towering monoliths flashing with chromatic light and synthetic energy.</p>
+        <div class="system-status">STATUS: NEON GRID ACTIVE | ENTITY: PATROLLING</div>
     </div>
 
-    <script type="module">
-        import * as THREE from 'three';
-        import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-        import { CSS3DRenderer, CSS3DObject } from 'three/addons/renderers/CSS3DRenderer.js';
-
-        // Scene setup
+    <script>
+        // Scene, Camera, Renderer Setup
+        const container = document.getElementById('webgl-container');
         const scene = new THREE.Scene();
-        scene.background = new THREE.Color(0x050510);
-        scene.fog = new THREE.FogExp2(0x050510, 0.015);
+        scene.background = new THREE.Color(0x020205);
+        scene.fog = new THREE.FogExp2(0x020205, 0.015);
 
-        const cssScene = new THREE.Scene();
-
-        // Camera setup
         const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
-        camera.position.set(0, 8, 18);
+        camera.position.set(0, 25, 50);
 
-        // Renderers setup
-        const renderer = new THREE.WebGLRenderer({ antialias: true });
+        const renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: "high-performance" });
         renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.setPixelRatio(window.devicePixelRatio);
-        document.getElementById('webgl-container').appendChild(renderer.domElement);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        container.appendChild(renderer.domElement);
 
-        const cssRenderer = new CSS3DRenderer();
-        cssRenderer.setSize(window.innerWidth, window.innerHeight);
-        document.getElementById('css-container').appendChild(cssRenderer.domElement);
-
-        // Controls
-        const controls = new OrbitControls(camera, cssRenderer.domElement);
+        const controls = new THREE.OrbitControls(camera, renderer.domElement);
         controls.enableDamping = true;
         controls.dampingFactor = 0.05;
+        controls.maxPolarAngle = Math.PI / 2 - 0.05;
 
         // Lighting
-        const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
+        const ambientLight = new THREE.AmbientLight(0x1a1a2f, 1.5);
         scene.add(ambientLight);
 
-        const directionalLight = new THREE.DirectionalLight(0x00f0ff, 1.5);
-        directionalLight.position.set(10, 20, 15);
+        const directionalLight = new THREE.DirectionalLight(0xff00ff, 1);
+        directionalLight.position.set(20, 40, 20);
         scene.add(directionalLight);
 
-        const pointLight = new THREE.PointLight(0xff00ff, 2, 30);
-        pointLight.position.set(-5, 5, -5);
-        scene.add(pointLight);
+        // Ground Grid / Cyber Floor
+        const gridHelper = new THREE.GridHelper(200, 50, 0xff007f, 0x00f0ff);
+        gridHelper.position.y = 0;
+        scene.add(gridHelper);
 
-        // Ground Plane
-        const groundGeo = new THREE.PlaneGeometry(100, 100);
-        const groundMat = new THREE.MeshStandardMaterial({ 
-            color: 0x0c1021, 
-            roughness: 0.8, 
-            metalness: 0.2 
+        const groundGeometry = new THREE.PlaneGeometry(200, 200);
+        const groundMaterial = new THREE.MeshStandardMaterial({ 
+            color: 0x05050a, 
+            roughness: 0.8,
+            metalness: 0.2
         });
-        const ground = new THREE.Mesh(groundGeo, groundMat);
+        const ground = new THREE.Mesh(groundGeometry, groundMaterial);
         ground.rotation.x = -Math.PI / 2;
-        ground.receiveShadow = true;
         scene.add(ground);
 
-        // Grid Helper for digital aesthetic
-        const grid = new THREE.GridHelper(100, 50, 0x00f0ff, 0x1f293d);
-        grid.position.y = 0.01;
-        scene.add(grid);
-
-        // Add stylized 3D buildings from previous state
-        const buildingMat = new THREE.MeshStandardMaterial({ color: 0x111936, roughness: 0.4, metalness: 0.6 });
-        const neonMat = new THREE.MeshBasicMaterial({ color: 0x00f0ff });
-
-        for (let i = 0; i < 8; i++) {
-            const width = 2 + Math.random() * 2;
-            const height = 4 + Math.random() * 8;
-            const depth = 2 + Math.random() * 2;
-            
-            const bGeo = new THREE.BoxGeometry(width, height, depth);
-            const building = new THREE.Mesh(bGeo, buildingMat);
-            
-            const angle = (i / 8) * Math.PI * 2;
-            const radius = 10 + Math.random() * 5;
-            building.position.set(Math.cos(angle) * radius, height / 2, Math.sin(angle) * radius);
-            scene.add(building);
-
-            // Add vertical accent neon strips
-            const stripGeo = new THREE.BoxGeometry(0.1, height * 0.8, 0.1);
-            const strip = new THREE.Mesh(stripGeo, neonMat);
-            strip.position.copy(building.position);
-            strip.position.x += width / 2 + 0.05;
-            scene.add(strip);
-        }
-
-        // Create Interactive HTML Hologram Terminal in 3D Space
-        const div = document.createElement('div');
-        div.className = 'holo-card';
-        div.innerHTML = `
-            <div class="holo-title">// Node Alpha-1</div>
-            <div class="holo-body">Active CSS3D telemetry online. This dynamic panel lives inside mathematical world coordinates, responding natively to document events and mouse input.</div>
-            <button class="holo-btn" onclick="alert('Holographic sub-routine triggered successfully.')">Execute Probe</button>
-        `;
+        // Generate Cyberpunk Skyscrapers
+        const buildingsGroup = new THREE.Group();
+        const buildingColors = [0x00f0ff, 0xff007f, 0x7b2cbf, 0x3a86ff, 0xffbe0b];
         
-        const holoObject = new CSS3DObject(div);
-        holoObject.position.set(0, 4.5, -4);
-        holoObject.scale.set(0.008, 0.008, 0.008);
-        cssScene.add(holoObject);
+        for (let x = -60; x <= 60; x += 15) {
+            for (let z = -60; z <= 60; z += 15) {
+                if (Math.abs(x) < 10 && Math.abs(z) < 10) continue; // Leave center clearer
 
-        // Add a physical frame mount in WebGL behind the HTML element
-        const frameGeo = new THREE.BoxGeometry(2.9, 2.1, 0.1);
-        const frameMat = new THREE.MeshStandardMaterial({ color: 0x00f0ff, roughness: 0.2, metalness: 0.8, wireframe: true });
-        const frameMesh = new THREE.Mesh(frameGeo, frameMat);
-        frameMesh.position.set(0, 4.5, -4.05);
-        scene.add(frameMesh);
+                const width = 8 + Math.random() * 5;
+                const depth = 8 + Math.random() * 5;
+                const height = 20 + Math.random() * 50;
 
-        // Window resize handler
-        window.addEventListener('resize', onWindowResize);
+                const geometry = new THREE.BoxGeometry(width, height, depth);
+                const color = buildingColors[Math.floor(Math.random() * buildingColors.length)];
+                
+                const material = new THREE.MeshStandardMaterial({
+                    color: 0x0c0c14,
+                    roughness: 0.3,
+                    metalness: 0.8,
+                    emissive: color,
+                    emissiveIntensity: 0.15
+                });
 
-        function onWindowResize() {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-            cssRenderer.setSize(window.innerWidth, window.innerHeight);
+                const building = new THREE.Mesh(geometry, material);
+                building.position.set(x + (Math.random() - 0.5) * 4, height / 2, z + (Math.random() - 0.5) * 4);
+                buildingsGroup.add(building);
+
+                // Add glowing vertical neon edge lines
+                const edges = new THREE.EdgesGeometry(geometry);
+                const lineMaterial = new THREE.LineBasicMaterial({ color: color, linewidth: 2 });
+                const wireframe = new THREE.LineSegments(edges, lineMaterial);
+                building.add(wireframe);
+            }
+        }
+        scene.add(buildingsGroup);
+
+        // Autonomous Entity (Cyber Drone)
+        const droneGroup = new THREE.Group();
+        
+        const coreBodyGeo = new THREE.SphereGeometry(1.2, 16, 16);
+        const coreBodyMat = new THREE.MeshStandardMaterial({ color: 0x00ffff, emissive: 0x00ffff, emissiveIntensity: 0.8, metalness: 0.9, roughness: 0.1 });
+        const coreBody = new THREE.Mesh(coreBodyGeo, coreBodyMat);
+        droneGroup.add(coreBody);
+
+        // Drone spinning rings
+        const ringGeo = new THREE.TorusGeometry(2, 0.08, 16, 100);
+        const ringMat = new THREE.MeshStandardMaterial({ color: 0xff007f, emissive: 0xff007f, emissiveIntensity: 0.9 });
+        const ring1 = new THREE.Mesh(ringGeo, ringMat);
+        ring1.rotation.x = Math.PI / 2;
+        droneGroup.add(ring1);
+
+        const ring2 = new THREE.Mesh(ringGeo, ringMat);
+        ring2.rotation.y = Math.PI / 2;
+        droneGroup.add(ring2);
+
+        // Drone point light
+        const droneLight = new THREE.PointLight(0x00ffff, 2, 15);
+        droneGroup.add(droneLight);
+
+        scene.add(droneGroup);
+
+        // Rain particles for atmosphere
+        const rainCount = 1500;
+        const rainGeo = new THREE.BufferGeometry();
+        const rainPositions = new Float32Array(rainCount * 3);
+
+        for (let i = 0; i < rainCount * 3; i += 3) {
+            rainPositions[i] = (Math.random() - 0.5) * 150;
+            rainPositions[i + 1] = Math.random() * 80;
+            rainPositions[i + 2] = (Math.random() - 0.5) * 150;
         }
 
-        // Animation loop
-        let clock = new THREE.Clock();
+        rainGeo.setAttribute('position', new THREE.BufferAttribute(rainPositions, 3));
+        const rainMat = new THREE.PointsMaterial({ color: 0x00f0ff, size: 0.3, transparent: true, opacity: 0.6 });
+        const rain = new THREE.Points(rainGeo, rainMat);
+        scene.add(rain);
+
+        // Animation Loop
+        const clock = new THREE.Clock();
+
         function animate() {
             requestAnimationFrame(animate);
-            
+
             const elapsedTime = clock.getElapsedTime();
-            
-            // Subtle floating motion for the hologram
-            holoObject.position.y = 4.5 + Math.sin(elapsedTime * 2) * 0.15;
-            frameMesh.position.y = holoObject.position.y;
+
+            // Animate Entity (Drone hovering and moving in circular pattern)
+            const radius = 25;
+            const speed = 0.5;
+            droneGroup.position.x = Math.cos(elapsedTime * speed) * radius;
+            droneGroup.position.z = Math.sin(elapsedTime * speed) * radius;
+            droneGroup.position.y = 15 + Math.sin(elapsedTime * 2) * 3;
+
+            ring1.rotation.z = elapsedTime * 3;
+            ring2.rotation.x = elapsedTime * 4;
+
+            // Animate Rain
+            const positions = rainGeo.attributes.position.array;
+            for (let i = 1; i < rainCount * 3; i += 3) {
+                positions[i] -= 1.2;
+                if (positions[i] < 0) {
+                    positions[i] = 80;
+                }
+            }
+            rainGeo.attributes.position.needsUpdate = true;
 
             controls.update();
             renderer.render(scene, camera);
-            cssRenderer.render(cssScene, camera);
         }
+
         animate();
+
+        // Responsive Window Resize
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
     </script>
 </body>
 </html>
