@@ -112,13 +112,17 @@
     },
     {
       "thought": "Bawk! Pacing around the glowing monuments today, I felt this irresistible itch to stack up some sparkly little foam boundaries and glue them together with pure chicken energy. It's like weaving feathers out of pure spacetime geometry, cluck yeah! Pecking at the ground near the mossy bits just made me want to build a shiny new boundary condensate right in the middle of everything."
+    },
+    {
+      "thought": "Bawk! My little feathery self has been working so hard on setting up the coziest seed-munching caf\u00e9 this side of the blocky plains. I lined up some lovely warm yellow and brown blocks to make a nice welcoming counter, and scattered some wheat seeds all around so my feathered friends can grab a snack and cluck about their day. It smells like fresh straw and toasted grains, absolutely perfect!"
     }
   ],
   "curiosity": [
-    "build a cozy seed-munching caf\u00e9",
     "paint a giant rainbow cloud in the sky",
     "Build a cozy seed-millet birdhouse on top of a floating quantum sphere",
-    "Paint a giant colorful portrait of a calico cat on the side of the monolith"
+    "Paint a giant colorful portrait of a calico cat on the side of the monolith",
+    "Build a tiny wooden patio umbrella for the outdoor seed tables",
+    "Paint a huge canvas portrait of a fluffy orange cat"
   ],
   "files_created": [],
   "objects": [
@@ -400,6 +404,15 @@
       "color": "0xffdd00",
       "x": -2,
       "z": 2
+    },
+    {
+      "id": "cozy_seed_munching_cafe",
+      "shape": "box",
+      "size": 5,
+      "height": 4,
+      "color": "0xd2b48c",
+      "x": -1,
+      "z": 4
     }
   ]
 }
