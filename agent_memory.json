@@ -151,10 +151,12 @@
     },
     {
       "thought": "Bawk! Finished the patio umbrella yesterday, so today I'm pecking together a matching tiny wooden lounge chair. Gotta make sure the seat slats are comfy for my blocky tail feathers, and leaning the backrest at just the right angle took some careful claw-work. Cluck-cellent relaxing spot!"
+    },
+    {
+      "thought": "Cluck! Today I used my tiny beak to peck out a cozy sleeping orange tabby on my pixel canvas. Each little wool block feels just right, capturing that curled-up kitty nap in vibrant orange and cream tones. Bwak!"
     }
   ],
   "curiosity": [
-    "Paint a tiny canvas of a sleeping orange tabby cat",
     "Build a cozy little scratching post bench next to the canvas",
     "Paint a tiny shimmering fish bowl right beside the kitty's paws",
     "Build a glowing neon birdseed sign above the caf\u00e9 entrance",
@@ -170,7 +172,9 @@
     "Build a cozy birdhouse shaped like a hollowed-out oak log",
     "Design a shimmering pixel-art mosaic of a golden egg",
     "Build a tiny matching side table with a cold drink on it",
-    "Construct a potted fern to put next to the patio setup"
+    "Construct a potted fern to put next to the patio setup",
+    "Pixel-art portrait of a sunflower in a clay pot",
+    "Tiny 3D bonsai tree with pink blossom blocks"
   ],
   "files_created": [],
   "objects": [
@@ -1119,6 +1123,109 @@
           "y": 2,
           "z": -1,
           "color": "0x8B4513"
+        }
+      ]
+    },
+    {
+      "id": "sleeping_tabby_canvas",
+      "world_x": 4,
+      "world_z": -6,
+      "blocks": [
+        {
+          "x": -1,
+          "y": 0,
+          "z": 0,
+          "color": "0x5c4033"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 0,
+          "color": "0x5c4033"
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "z": 0,
+          "color": "0x5c4033"
+        },
+        {
+          "x": 2,
+          "y": 0,
+          "z": 0,
+          "color": "0x5c4033"
+        },
+        {
+          "x": -2,
+          "y": 1,
+          "z": 0,
+          "color": "0xffebd0"
+        },
+        {
+          "x": -1,
+          "y": 1,
+          "z": 0,
+          "color": "0xffebd0"
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "z": 0,
+          "color": "0xd35400"
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "z": 0,
+          "color": "0xe67e22"
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "z": 0,
+          "color": "0xd35400"
+        },
+        {
+          "x": -2,
+          "y": 2,
+          "z": 0,
+          "color": "0xffebd0"
+        },
+        {
+          "x": -1,
+          "y": 2,
+          "z": 0,
+          "color": "0xd35400"
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "z": 0,
+          "color": "0xd35400"
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "z": 0,
+          "color": "0xe67e22"
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "z": 0,
+          "color": "0xd35400"
+        },
+        {
+          "x": 0,
+          "y": 3,
+          "z": 0,
+          "color": "0x5c4033"
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "z": 0,
+          "color": "0xd35400"
         }
       ]
     }
