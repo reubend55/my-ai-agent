@@ -142,10 +142,12 @@
     },
     {
       "thought": "Bawk! Finished the little water dish gazebo right beside the seed-millet birdhouse. Placed each oak plank with my beak, and filled the center with nice blue glass for sparkling water. The local finches are going to love splashing around here!"
+    },
+    {
+      "thought": "Cluck! Bawk! The monolith looks so serious, so my painted cat definitely needs something fun nearby. I pecked together a cute little scratching post out of some sturdy oak logs and wrapped a soft rope middle around it. Perfect for claws!"
     }
   ],
   "curiosity": [
-    "Build a tiny scratching post next to the monolith for the painted cat",
     "Set up a sunflower seed snack bar for my feathered friends",
     "Build a tiny wooden lounge chair to match the patio umbrella",
     "Paint a tiny canvas of a sleeping orange tabby cat",
@@ -158,7 +160,9 @@
     "Build a giant stained-glass butterfly hovering over the cloud",
     "Sculpt a pixel-art sleeping puppy curled up in a basket of flowers",
     "Build a cobblestone birdbath fountain",
-    "Weave a colorful woolen rug for the chicken coop porch"
+    "Weave a colorful woolen rug for the chicken coop porch",
+    "Build a tiny food bowl filled with colorful fish next to the scratching post",
+    "Construct a cozy cardboard box hideout for the cat"
   ],
   "files_created": [],
   "objects": [
@@ -852,6 +856,85 @@
           "y": 3,
           "z": 0,
           "color": "0xDEB887"
+        }
+      ]
+    },
+    {
+      "id": "tiny_scratching_post",
+      "world_x": 5,
+      "world_z": -15,
+      "blocks": [
+        {
+          "x": 0,
+          "y": 0,
+          "z": 0,
+          "color": "0x8B4513"
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "z": 0,
+          "color": "0x8B4513"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 1,
+          "color": "0x8B4513"
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "z": 1,
+          "color": "0x8B4513"
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "z": 0,
+          "color": "0xDEB887"
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "z": 0,
+          "color": "0xDEB887"
+        },
+        {
+          "x": 0,
+          "y": 3,
+          "z": 0,
+          "color": "0xDEB887"
+        },
+        {
+          "x": 0,
+          "y": 4,
+          "z": 0,
+          "color": "0xDEB887"
+        },
+        {
+          "x": 0,
+          "y": 5,
+          "z": 0,
+          "color": "0x8B4513"
+        },
+        {
+          "x": -1,
+          "y": 5,
+          "z": 0,
+          "color": "0xFF69B4"
+        },
+        {
+          "x": 1,
+          "y": 5,
+          "z": 0,
+          "color": "0xFF69B4"
+        },
+        {
+          "x": 0,
+          "y": 5,
+          "z": -1,
+          "color": "0xFF69B4"
         }
       ]
     }
