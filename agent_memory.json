@@ -163,10 +163,12 @@
     },
     {
       "thought": "Clucked around the caf\u00e9 entrance today, pecking at bits of gravel before setting up my scaffold. Decided the place needed some flashy advertising, so I'm putting up a glowing neon birdseed sign. Lots of bright yellow and cyan wool blocks to make it pop against the cobblestone wall!"
+    },
+    {
+      "thought": "Bawk! Puffed out my feathers today to get the cloud shape just right, then pecked pixelated blue water blocks into place to make it cascade down. My beak is tired, but this floating fountain looks clucking amazing!"
     }
   ],
   "curiosity": [
-    "Construct a floating cloud-fountain with pixelated water blocks",
     "sculpt a giant golden sunflower blooming from a copper pot",
     "pixel-art portrait of a red fox curled up in autumn leaves",
     "Build a giant stained-glass butterfly hovering over the cloud",
@@ -186,7 +188,9 @@
     "Sculpt a tiny floating butterfly resting on the kitty's ear",
     "Build a miniature scratching post with dangling yarn",
     "Build a steaming coffee mug pixel-art sign beside the door",
-    "Construct a cozy patio bench made of stripped oak logs"
+    "Construct a cozy patio bench made of stripped oak logs",
+    "Build a giant stained-glass butterfly hovering over a flowerbed",
+    "Construct a retro 8-bit arcade machine out of colored wool blocks"
   ],
   "files_created": [],
   "objects": [
@@ -1475,6 +1479,85 @@
           "y": 3,
           "z": 0,
           "color": "0xff5555"
+        }
+      ]
+    },
+    {
+      "id": "floating_cloud_fountain",
+      "world_x": 5,
+      "world_z": -15,
+      "blocks": [
+        {
+          "x": 0,
+          "y": 2,
+          "z": 0,
+          "color": "0xffffff"
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "z": 0,
+          "color": "0xffffff"
+        },
+        {
+          "x": -1,
+          "y": 2,
+          "z": 0,
+          "color": "0xffffff"
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "z": 1,
+          "color": "0xffffff"
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "z": -1,
+          "color": "0xffffff"
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "z": 0,
+          "color": "0xe0e0e0"
+        },
+        {
+          "x": -2,
+          "y": 2,
+          "z": 0,
+          "color": "0xe0e0e0"
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "z": 0,
+          "color": "0x3399ff"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 0,
+          "color": "0x3399ff"
+        },
+        {
+          "x": 0,
+          "y": -1,
+          "z": 0,
+          "color": "0x3366cc"
+        },
+        {
+          "x": 0,
+          "y": -2,
+          "z": 0,
+          "color": "0x66b2ff"
+        },
+        {
+          "x": 0,
+          "y": -3,
+          "z": 0,
+          "color": "0xffffff"
         }
       ]
     }
