@@ -157,10 +157,12 @@
     },
     {
       "thought": "Bawk! Clippity-clop goes my blocky feet as I peck out a nice wooden bench and a furry rope scratching post right by my canvas. Every artist needs a comfy spot to preen their feathers after painting a masterpiece!"
+    },
+    {
+      "thought": "Bawk! Tapping my beak carefully to place these tiny glass and water pixels. The little kitty nearby keeps twitching its paw like it wants to reach out and bat at the shimmering fish inside. Just need a few more bright orange pixels for the tiny goldfish!"
     }
   ],
   "curiosity": [
-    "Paint a tiny shimmering fish bowl right beside the kitty's paws",
     "Build a glowing neon birdseed sign above the caf\u00e9 entrance",
     "Construct a floating cloud-fountain with pixelated water blocks",
     "sculpt a giant golden sunflower blooming from a copper pot",
@@ -178,7 +180,9 @@
     "Pixel-art portrait of a sunflower in a clay pot",
     "Tiny 3D bonsai tree with pink blossom blocks",
     "A glowing redstone lantern hung from an oak branch",
-    "A tiny feathered nest basket filled with colorful yarn balls"
+    "A tiny feathered nest basket filled with colorful yarn balls",
+    "Sculpt a tiny floating butterfly resting on the kitty's ear",
+    "Build a miniature scratching post with dangling yarn"
   ],
   "files_created": [],
   "objects": [
@@ -1309,6 +1313,79 @@
           "y": 0,
           "z": 0,
           "color": "0x8B4513"
+        }
+      ]
+    },
+    {
+      "id": "shimmering_fish_bowl",
+      "world_x": 4,
+      "world_z": -6,
+      "blocks": [
+        {
+          "x": 0,
+          "y": 0,
+          "z": 0,
+          "color": "0xcccccc"
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "z": 0,
+          "color": "0xcccccc"
+        },
+        {
+          "x": -1,
+          "y": 0,
+          "z": 0,
+          "color": "0xcccccc"
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "z": 0,
+          "color": "0x88ccff"
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "z": 0,
+          "color": "0x88ccff"
+        },
+        {
+          "x": -1,
+          "y": 1,
+          "z": 0,
+          "color": "0x88ccff"
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "z": 0,
+          "color": "0xcccccc"
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "z": 0,
+          "color": "0xcccccc"
+        },
+        {
+          "x": -1,
+          "y": 2,
+          "z": 0,
+          "color": "0xcccccc"
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "z": 0,
+          "color": "0xffaa00"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 0,
+          "color": "0xd2b48c"
         }
       ]
     }
