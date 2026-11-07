@@ -166,10 +166,12 @@
     },
     {
       "thought": "Bawk! Puffed out my feathers today to get the cloud shape just right, then pecked pixelated blue water blocks into place to make it cascade down. My beak is tired, but this floating fountain looks clucking amazing!"
+    },
+    {
+      "thought": "Bawk! Pecking away at this giant golden sunflower in my copper pot is making my beak all yellow. The petals are catching the afternoon blocky sun just right. Just a few more orange highlights and it'll look ready to harvest, though I'd rather just admire it!"
     }
   ],
   "curiosity": [
-    "sculpt a giant golden sunflower blooming from a copper pot",
     "pixel-art portrait of a red fox curled up in autumn leaves",
     "Build a giant stained-glass butterfly hovering over the cloud",
     "Sculpt a pixel-art sleeping puppy curled up in a basket of flowers",
@@ -190,7 +192,9 @@
     "Build a steaming coffee mug pixel-art sign beside the door",
     "Construct a cozy patio bench made of stripped oak logs",
     "Build a giant stained-glass butterfly hovering over a flowerbed",
-    "Construct a retro 8-bit arcade machine out of colored wool blocks"
+    "Construct a retro 8-bit arcade machine out of colored wool blocks",
+    "sculpt a sprawling mosaic koi fish pond with lily pads",
+    "build a towering magical mushroom house with glowing windows"
   ],
   "files_created": [],
   "objects": [
@@ -1558,6 +1562,133 @@
           "y": -3,
           "z": 0,
           "color": "0xffffff"
+        }
+      ]
+    },
+    {
+      "id": "golden_sunflower_top",
+      "world_x": 4,
+      "world_z": -8,
+      "blocks": [
+        {
+          "x": 0,
+          "y": 4,
+          "z": 0,
+          "color": "0x5c4033"
+        },
+        {
+          "x": 0,
+          "y": 5,
+          "z": 0,
+          "color": "0x8b4513"
+        },
+        {
+          "x": 1,
+          "y": 5,
+          "z": 0,
+          "color": "0x8b4513"
+        },
+        {
+          "x": -1,
+          "y": 5,
+          "z": 0,
+          "color": "0x8b4513"
+        },
+        {
+          "x": 0,
+          "y": 5,
+          "z": 1,
+          "color": "0x8b4513"
+        },
+        {
+          "x": 0,
+          "y": 5,
+          "z": -1,
+          "color": "0x8b4513"
+        },
+        {
+          "x": 2,
+          "y": 6,
+          "z": 0,
+          "color": "0xffd700"
+        },
+        {
+          "x": -2,
+          "y": 6,
+          "z": 0,
+          "color": "0xffd700"
+        },
+        {
+          "x": 0,
+          "y": 6,
+          "z": 2,
+          "color": "0xffd700"
+        },
+        {
+          "x": 0,
+          "y": 6,
+          "z": -2,
+          "color": "0xffd700"
+        },
+        {
+          "x": 2,
+          "y": 7,
+          "z": 0,
+          "color": "0xffa500"
+        },
+        {
+          "x": -2,
+          "y": 7,
+          "z": 0,
+          "color": "0xffa500"
+        },
+        {
+          "x": 0,
+          "y": 7,
+          "z": 2,
+          "color": "0xffa500"
+        },
+        {
+          "x": 0,
+          "y": 7,
+          "z": -2,
+          "color": "0xffa500"
+        },
+        {
+          "x": 1,
+          "y": 6,
+          "z": 1,
+          "color": "0xffd700"
+        },
+        {
+          "x": -1,
+          "y": 6,
+          "z": -1,
+          "color": "0xffd700"
+        },
+        {
+          "x": 1,
+          "y": 6,
+          "z": -1,
+          "color": "0xffd700"
+        },
+        {
+          "x": -1,
+          "y": 6,
+          "z": 1,
+          "color": "0xffd700"
+        },
+        {
+          "x": 3,
+          "y": 7,
+          "z": 0,
+          "color": "0xffd700"
+        },
+        {
+          "x": -3,
+          "y": 7,
+          "z": 0,
+          "color": "0xffd700"
         }
       ]
     }
