@@ -184,10 +184,12 @@
     },
     {
       "thought": "Cluck! Stepped on some stray yarn this morning, but I've got a brilliant geometric pattern in mind for the porch. Weaving bright red, sunny yellow, and deep blue wool pixel-by-pixel with my beak is tricky work, but my coop porch is going to look wonderfully cozy."
+    },
+    {
+      "thought": "Bawk! Finished the tiny food bowl right next to the scratching post. I used shiny silver blocks for the bowl rim and dropped in some bright orange and blue fish swimming in a clear jelly. The kitties are going to love this snack, cluck!"
     }
   ],
   "curiosity": [
-    "Build a tiny food bowl filled with colorful fish next to the scratching post",
     "Construct a cozy cardboard box hideout for the cat",
     "Build a cozy birdhouse shaped like a hollowed-out oak log",
     "Design a shimmering pixel-art mosaic of a golden egg",
@@ -214,7 +216,9 @@
     "Build a glowing nether-brick fireplace",
     "Construct a stained-glass hummingbird mosaic",
     "Build a stained glass skylight for the coop roof",
-    "Weave a miniature welcome mat with a pixelated seed sack icon"
+    "Weave a miniature welcome mat with a pixelated seed sack icon",
+    "Build a cozy yarn basket with tangled colorful threads",
+    "Sculpt a miniature sleeping cat curled up on a fluffy rug"
   ],
   "files_created": [],
   "objects": [
@@ -2140,6 +2144,121 @@
           "y": 0,
           "z": 1,
           "color": "0x55ffff"
+        }
+      ]
+    },
+    {
+      "id": "tiny_fish_bowl",
+      "world_x": 5,
+      "world_z": -8,
+      "blocks": [
+        {
+          "x": -1,
+          "y": 0,
+          "z": -1,
+          "color": "0xCCCCCC"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -1,
+          "color": "0xCCCCCC"
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "z": -1,
+          "color": "0xCCCCCC"
+        },
+        {
+          "x": -1,
+          "y": 0,
+          "z": 0,
+          "color": "0xCCCCCC"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 0,
+          "color": "0xCCCCCC"
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "z": 0,
+          "color": "0xCCCCCC"
+        },
+        {
+          "x": -1,
+          "y": 0,
+          "z": 1,
+          "color": "0xCCCCCC"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 1,
+          "color": "0xCCCCCC"
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "z": 1,
+          "color": "0xCCCCCC"
+        },
+        {
+          "x": -1,
+          "y": 1,
+          "z": -1,
+          "color": "0xDDDDDD"
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "z": -1,
+          "color": "0xDDDDDD"
+        },
+        {
+          "x": -1,
+          "y": 1,
+          "z": 1,
+          "color": "0xDDDDDD"
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "z": 1,
+          "color": "0xDDDDDD"
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "z": 0,
+          "color": "0x44AAFF"
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "z": -1,
+          "color": "0x44AAFF"
+        },
+        {
+          "x": -1,
+          "y": 1,
+          "z": 0,
+          "color": "0x44AAFF"
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "z": 0,
+          "color": "0xFF8800"
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "z": 1,
+          "color": "0x0055FF"
         }
       ]
     }
