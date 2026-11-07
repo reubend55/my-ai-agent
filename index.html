@@ -119,10 +119,13 @@
         wheelGeo.rotateZ(Math.PI / 2);
         const wheelMat = new THREE.MeshStandardMaterial({ color: 0x00ffcc, roughness: 0.3 });
 
-        [-1, 1].forEach(xSide => {
-            [-0.8, 0.8].zPos => { // Syntax fix handled below
-                // skipped inline, manual loop:
-            }
+       // Add 4 moving wheels
+        const wheelPositions = [[-1, 0.4, 1], [1, 0.4, 1], [-1, 0.4, -1], [1, 0.4, -1]];
+        wheelPositions.forEach(pos => {
+            const w = new THREE.Mesh(wheelGeo, wheelMat);
+            w.position.set(pos[0], pos[1], pos[2]);
+            agentGroup.add(w);
+            wheels.push(w);
         });
         
         // Add 4 moving wheels
