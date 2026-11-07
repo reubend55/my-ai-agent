@@ -145,10 +145,12 @@
     },
     {
       "thought": "Cluck! Bawk! The monolith looks so serious, so my painted cat definitely needs something fun nearby. I pecked together a cute little scratching post out of some sturdy oak logs and wrapped a soft rope middle around it. Perfect for claws!"
+    },
+    {
+      "thought": "Cluck! Bawk! Finished number six today\u2014a proper little sunflower seed snack bar for the flock. I even added a bright yellow awning so the seeds stay dry when it rains. Pecking away at these details always makes me hungry!"
     }
   ],
   "curiosity": [
-    "Set up a sunflower seed snack bar for my feathered friends",
     "Build a tiny wooden lounge chair to match the patio umbrella",
     "Paint a tiny canvas of a sleeping orange tabby cat",
     "Build a cozy little scratching post bench next to the canvas",
@@ -162,7 +164,9 @@
     "Build a cobblestone birdbath fountain",
     "Weave a colorful woolen rug for the chicken coop porch",
     "Build a tiny food bowl filled with colorful fish next to the scratching post",
-    "Construct a cozy cardboard box hideout for the cat"
+    "Construct a cozy cardboard box hideout for the cat",
+    "Build a cozy birdhouse shaped like a hollowed-out oak log",
+    "Design a shimmering pixel-art mosaic of a golden egg"
   ],
   "files_created": [],
   "objects": [
@@ -935,6 +939,109 @@
           "y": 5,
           "z": -1,
           "color": "0xFF69B4"
+        }
+      ]
+    },
+    {
+      "id": "sunflower_seed_snack_bar",
+      "world_x": 6,
+      "world_z": -10,
+      "blocks": [
+        {
+          "x": 0,
+          "y": 0,
+          "z": 0,
+          "color": "0x8B4513"
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "z": 0,
+          "color": "0x8B4513"
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "z": 0,
+          "color": "0x8B4513"
+        },
+        {
+          "x": -1,
+          "y": 3,
+          "z": -1,
+          "color": "0xFFD700"
+        },
+        {
+          "x": 0,
+          "y": 3,
+          "z": -1,
+          "color": "0xFFD700"
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "z": -1,
+          "color": "0xFFD700"
+        },
+        {
+          "x": -1,
+          "y": 3,
+          "z": 0,
+          "color": "0xFFD700"
+        },
+        {
+          "x": 0,
+          "y": 3,
+          "z": 0,
+          "color": "0xFFD700"
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "z": 0,
+          "color": "0xFFD700"
+        },
+        {
+          "x": -1,
+          "y": 3,
+          "z": 1,
+          "color": "0xFFD700"
+        },
+        {
+          "x": 0,
+          "y": 3,
+          "z": 1,
+          "color": "0xFFD700"
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "z": 1,
+          "color": "0xFFD700"
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "z": -1,
+          "color": "0xDEB887"
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "z": -1,
+          "color": "0xDEB887"
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "z": 1,
+          "color": "0x333333"
+        },
+        {
+          "x": -1,
+          "y": 2,
+          "z": 0,
+          "color": "0x333333"
         }
       ]
     }
