@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Minecraft Chicken Builder World</title>
+    <title>Minecraft Voxel Builder World</title>
     <style>
         body { margin: 0; overflow: hidden; background: #87CEEB; font-family: monospace; }
         #canvas-container { width: 100vw; height: 100vh; display: block; }
@@ -89,7 +89,7 @@
 <body>
 
     <div id="ui-overlay">
-        <h2>MC Chicken Builder</h2>
+        <h2>MC Voxel Builder</h2>
         <div id="status">Status: Connecting...</div>
         <button class="btn" id="cam-toggle">Switch to Chicken POV</button>
         
@@ -199,39 +199,45 @@
         sendBtn.addEventListener('click', sendCommand);
         userInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') sendCommand(); });
 
-        // Spawned World Objects with Growing Animation
-        const spawnedObjects = new Set();
+        // Spawn Multi-Block Voxel Structures
+        const spawnedStructures = new Set();
         let targetPos = new THREE.Vector3(0, 0, 0);
         let isBuilding = false;
 
-        function spawnObject(data) {
-            if (spawnedObjects.has(data.id)) return;
-            spawnedObjects.add(data.id);
+        function spawnStructure(data) {
+            if (spawnedStructures.has(data.id)) return;
+            spawnedStructures.add(data.id);
 
-            let geo;
-            if (data.shape === "box") geo = new THREE.BoxGeometry(data.size || 3, data.size || 3, data.size || 3);
-            else if (data.shape === "cylinder") geo = new THREE.CylinderGeometry(1.5, 1.5, data.height || 4, 16);
-            else geo = new THREE.SphereGeometry(2, 16, 16);
+            const structureGroup = new THREE.Group();
+            structureGroup.position.set(data.world_x || 0, 0, data.world_z || 0);
 
-            let colorHex = parseInt(data.color) || 0xffffff;
-            const mat = new THREE.MeshStandardMaterial({ color: colorHex, roughness: 0.4 });
-            const mesh = new THREE.Mesh(geo, mat);
-            
-            // Start small at ground level and grow up (building animation!)
-            mesh.position.set(data.x || 0, 0, data.z || 0);
-            mesh.scale.set(0.1, 0.1, 0.1);
-            scene.add(mesh);
+            // Build out of individual voxel blocks
+            if (data.blocks && Array.isArray(data.blocks)) {
+                data.blocks.forEach(b => {
+                    const blockGeo = new THREE.BoxGeometry(1, 1, 1);
+                    const colorHex = parseInt(b.color) || 0x8B4513;
+                    const blockMat = new THREE.MeshStandardMaterial({ color: colorHex, roughness: 0.5 });
+                    const blockMesh = new THREE.Mesh(blockGeo, blockMat);
+                    
+                    // Position relative to structure center
+                    blockMesh.position.set(b.x || 0, (b.y || 0) + 0.5, b.z || 0);
+                    structureGroup.add(blockMesh);
+                });
+            }
 
-            // Animate scale up to full size smoothly
-            let growInterval = setInterval(() => {
-                mesh.scale.lerp(new THREE.Vector3(1, 1, 1), 0.1);
-                if (mesh.scale.x > 0.95) clearInterval(growInterval);
+            // Start tiny and pop into place block-by-block
+            structureGroup.scale.set(0.1, 0.1, 0.1);
+            scene.add(structureGroup);
+
+            let scaleInterval = setInterval(() => {
+                structureGroup.scale.lerp(new THREE.Vector3(1, 1, 1), 0.15);
+                if (structureGroup.scale.x > 0.95) clearInterval(scaleInterval);
             }, 50);
 
-            // Command the chicken to walk to this newly built structure!
-            targetPos.set(data.x || 0, 0, data.z || 0);
+            // Command chicken to walk over to the new build site
+            targetPos.set(data.world_x || 0, 0, data.world_z || 0);
             isBuilding = true;
-            setTimeout(() => { isBuilding = false; }, 6000); // Pek/celebrate for 6 seconds
+            setTimeout(() => { isBuilding = false; }, 6000);
         }
 
         // Fetch Memory Live
@@ -241,7 +247,7 @@
                 if (!response.ok) throw new Error("HTTP error!");
                 const memory = await response.json();
 
-                document.getElementById('status').innerText = "Status: Chicken Active & Building";
+                document.getElementById('status').innerText = "Status: Voxel Architect Active";
 
                 const logDiv = document.getElementById('thought-log');
                 logDiv.innerHTML = "";
@@ -254,8 +260,8 @@
                     });
                 }
 
-                if (memory.objects) {
-                    memory.objects.forEach(obj => spawnObject(obj));
+                if (memory.structures) {
+                    memory.structures.forEach(struct => spawnStructure(struct));
                 }
             } catch (err) {
                 console.error("DEBUG FETCH ERROR:", err);
@@ -273,12 +279,10 @@
             requestAnimationFrame(animate);
             let time = clock.getElapsedTime();
 
-            // If not actively walking to a build site, wander casually
             if (!isBuilding && currentPos.distanceTo(targetPos) < 2) {
-                targetPos.set((Math.random() - 0.5) * 30, 0, (Math.random() - 0.5) * 30);
+                targetPos.set((Math.random() - 0.5) * 35, 0, (Math.random() - 0.5) * 35);
             }
 
-            // Move toward target position
             currentPos.lerp(targetPos, 0.01);
             chickenGroup.position.copy(currentPos);
 
@@ -298,7 +302,6 @@
                 leftLeg.rotation.x = 0;
                 rightLeg.rotation.x = 0;
                 chickenGroup.position.y = 0;
-                // Rapid pecking when building or standing still
                 head.rotation.x = Math.sin(time * 6) > 0 ? 0.5 : 0;
             }
 
