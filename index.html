@@ -153,7 +153,8 @@
             else if (data.shape === "cylinder") geo = new THREE.CylinderGeometry(1, 1, data.height || 3, 16);
             else geo = new THREE.SphereGeometry(1.5, 16, 16);
 
-            const mat = new THREE.MeshStandardMaterial({ color: data.color || 0x00ffcc, roughness: 0.4 });
+            let colorHex = parseInt(data.color) || 0x00ffcc;
+            const mat = new THREE.MeshStandardMaterial({ color: colorHex, roughness: 0.4 });
             const mesh = new THREE.Mesh(geo, mat);
             mesh.position.set(data.x || 0, (data.size || 2)/2, data.z || 0);
             scene.add(mesh);
@@ -163,8 +164,8 @@
         // Fetch Memory Live
         async function fetchAgentData() {
             try {
-                const response = await fetch('./agent_memory.json?t=' + Date.now());
-                if (!response.ok) throw new Error();
+                const response = await fetch('./agent_memory.json?_=' + new Date().getTime());
+                if (!response.ok) throw new Error("File not found");
                 const memory = await response.json();
 
                 document.getElementById('status').innerText = "Status: Exploring Active";
@@ -184,16 +185,53 @@
                     memory.objects.forEach(obj => spawnObject(obj));
                 }
             } catch (err) {
-                document.getElementById('status').innerText = "Status: Waiting for background python script...";
+                document.getElementById('status').innerText = "Status: Retrying connection...";
             }
         }
 
-        setInterval(fetchAgentData, 8000);
+        setInterval(fetchAgentData, 5000);
         fetchAgentData();
 
         // Animation & Exploration Physics Loop
         let clock = new THREE.Clock();
-        let targetPosition = new THREE.Vector3(0, 0, 0);
 
         function animate() {
-            request
+            requestAnimationFrame(animate);
+            let time = clock.getElapsedTime();
+
+            // Autonomous Exploration Movement
+            let angle = time * 0.3;
+            let radius = 12 + Math.sin(time * 0.2) * 5;
+            let targetX = Math.cos(angle) * radius;
+            let targetZ = Math.sin(angle) * radius;
+
+            agentGroup.position.x += (targetX - agentGroup.position.x) * 0.03;
+            agentGroup.position.z += (targetZ - agentGroup.position.z) * 0.03;
+            agentGroup.rotation.y = -angle - Math.PI / 2;
+
+            eye.material.emissiveIntensity = 0.5 + Math.sin(time * 5) * 0.5;
+
+            // Camera Handling
+            if (isAgentPOV) {
+                let eyePos = new THREE.Vector3();
+                eye.getWorldPosition(eyePos);
+                camera.position.copy(eyePos);
+                
+                let lookTarget = eyePos.clone().add(new THREE.Vector3(Math.cos(angle)*10, 0, Math.sin(angle)*10));
+                camera.lookAt(lookTarget);
+            } else {
+                controls.update();
+            }
+
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+    </script>
+</body>
+</html>
