@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Autonomous AI Walking Bird World</title>
+    <title>Minecraft Chicken AI World</title>
     <style>
         body { margin: 0; overflow: hidden; background: #050510; font-family: monospace; }
         #canvas-container { width: 100vw; height: 100vh; display: block; }
@@ -89,16 +89,16 @@
 <body>
 
     <div id="ui-overlay">
-        <h2>Walking AI Bird</h2>
+        <h2>MC Chicken Entity</h2>
         <div id="status">Status: Connecting...</div>
-        <button class="btn" id="cam-toggle">Switch to Bird Eye POV</button>
+        <button class="btn" id="cam-toggle">Switch to Chicken POV</button>
         
         <div id="command-box">
-            <input type="text" id="user-input" placeholder="Tell your bird what to paint or build..." />
+            <input type="text" id="user-input" placeholder="Tell the chicken what to build or paint..." />
             <button id="send-btn">Send</button>
         </div>
 
-        <div id="thought-log">Bird mind waking up...</div>
+        <div id="thought-log">Chicken mind waking up...</div>
     </div>
 
     <div id="canvas-container"></div>
@@ -112,7 +112,7 @@
         scene.fog = new THREE.FogExp2(0x050510, 0.01);
 
         const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
-        camera.position.set(0, 20, 30);
+        camera.position.set(0, 15, 25);
 
         const renderer = new THREE.WebGLRenderer({ antialias: true });
         renderer.setSize(window.innerWidth, window.innerHeight);
@@ -136,53 +136,52 @@
         floor.rotation.x = -Math.PI / 2;
         scene.add(floor);
 
-        // --- BUILD THE WALKING BIRD ENTITY ---
-        const birdGroup = new THREE.Group();
+        // --- BUILD THE MINECRAFT CHICKEN ENTITY ---
+        const chickenGroup = new THREE.Group();
 
-        // Bird Torso
-        const bodyGeo = new THREE.ConeGeometry(0.5, 1.4, 16);
-        bodyGeo.rotateX(Math.PI / 2);
-        const bodyMat = new THREE.MeshStandardMaterial({ color: 0x00ffcc, metalness: 0.7, roughness: 0.2 });
-        const birdBody = new THREE.Mesh(bodyGeo, bodyMat);
-        birdBody.position.y = 1.0;
-        birdGroup.add(birdBody);
+        // Blocky MC White Body
+        const bodyMat = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.5 });
+        const body = new THREE.Mesh(new THREE.BoxGeometry(1.2, 1.0, 1.6), bodyMat);
+        body.position.y = 1.0;
+        chickenGroup.add(body);
 
-        // Head & Beak
-        const head = new THREE.Mesh(
-            new THREE.SphereGeometry(0.35, 16, 16),
-            bodyMat
-        );
-        head.position.set(0, 1.5, 0.5);
-        birdGroup.add(head);
+        // Blocky MC Head
+        const head = new THREE.Mesh(new THREE.BoxGeometry(0.8, 0.8, 0.8), bodyMat);
+        head.position.set(0, 1.7, 0.7);
+        chickenGroup.add(head);
 
-        const beak = new THREE.Mesh(
-            new THREE.ConeGeometry(0.12, 0.4, 8),
-            new THREE.MeshStandardMaterial({ color: 0xff00ff, emissive: 0xff00ff, emissiveIntensity: 0.8 })
-        );
-        beak.rotation.x = Math.PI / 2;
-        beak.position.set(0, 1.45, 0.85);
-        birdGroup.add(beak);
+        // Orange Beak
+        const beakMat = new THREE.MeshStandardMaterial({ color: 0xffaa00 });
+        const beak = new THREE.Mesh(new THREE.BoxGeometry(0.4, 0.3, 0.4), beakMat);
+        beak.position.set(0, 1.6, 1.15);
+        chickenGroup.add(beak);
 
-        // Articulated Walking Legs
-        const legMat = new THREE.MeshStandardMaterial({ color: 0xffaa00, roughness: 0.4 });
-        const leftLeg = new THREE.Mesh(new THREE.CylinderGeometry(0.08, 0.08, 0.9), legMat);
-        leftLeg.position.set(-0.25, 0.45, 0);
-        birdGroup.add(leftLeg);
+        // Red Wattle / Comb
+        const redMat = new THREE.MeshStandardMaterial({ color: 0xff0000 });
+        const comb = new THREE.Mesh(new THREE.BoxGeometry(0.2, 0.3, 0.5), redMat);
+        comb.position.set(0, 2.2, 0.7);
+        chickenGroup.add(comb);
 
-        const rightLeg = new THREE.Mesh(new THREE.CylinderGeometry(0.08, 0.08, 0.9), legMat);
-        rightLeg.position.set(0.25, 0.45, 0);
-        birdGroup.add(rightLeg);
+        // Yellow Blocky Legs
+        const legGeo = new THREE.BoxGeometry(0.2, 0.8, 0.2);
+        const leftLeg = new THREE.Mesh(legGeo, beakMat);
+        leftLeg.position.set(-0.35, 0.4, 0);
+        chickenGroup.add(leftLeg);
 
-        scene.add(birdGroup);
-        birdGroup.position.set(0, 0, 0);
+        const rightLeg = new THREE.Mesh(legGeo, beakMat);
+        rightLeg.position.set(0.35, 0.4, 0);
+        chickenGroup.add(rightLeg);
+
+        scene.add(chickenGroup);
+        chickenGroup.position.set(0, 0, 0);
 
         // Camera POV Mode Toggle
-        let isBirdPOV = false;
+        let isChickenPOV = false;
         const camToggleBtn = document.getElementById('cam-toggle');
         camToggleBtn.addEventListener('click', () => {
-            isBirdPOV = !isBirdPOV;
-            camToggleBtn.innerText = isBirdPOV ? "Switch to Orbit Cam" : "Switch to Bird Eye POV";
-            controls.enabled = !isBirdPOV;
+            isChickenPOV = !isChickenPOV;
+            camToggleBtn.innerText = isChickenPOV ? "Switch to Orbit Cam" : "Switch to Chicken POV";
+            controls.enabled = !isChickenPOV;
         });
 
         // Command Box Handling
@@ -192,16 +191,16 @@
         async function sendCommand() {
             let cmd = userInput.value.trim();
             if (!cmd) return;
-            document.getElementById('status').innerText = "Status: Transmitting to walking bird...";
+            document.getElementById('status').innerText = "Status: Transmitting to MC chicken...";
             try {
                 const res = await fetch('./agent_memory.json?_=' + new Date().getTime());
                 let memory = await res.json();
                 if (!memory.curiosity) memory.curiosity = [];
                 memory.curiosity.unshift("USER REQUEST: " + cmd);
                 if (!memory.history) memory.history = [];
-                memory.history.push({ thought: "[WALKING BIRD INSTRUCTION]: " + cmd });
+                memory.history.push({ thought: "[CHICKEN INSTRUCTION]: " + cmd });
                 userInput.value = "";
-                document.getElementById('status').innerText = "Status: Bird received instruction!";
+                document.getElementById('status').innerText = "Status: Chicken heard you!";
             } catch (err) {
                 alert("Make sure local python server is running!");
             }
@@ -235,7 +234,7 @@
                 if (!response.ok) throw new Error();
                 const memory = await response.json();
 
-                document.getElementById('status').innerText = "Status: Walking & Exploring Active";
+                document.getElementById('status').innerText = "Status: MC Chicken Wandering Active";
 
                 const logDiv = document.getElementById('thought-log');
                 logDiv.innerHTML = "";
@@ -252,67 +251,8 @@
                     memory.objects.forEach(obj => spawnObject(obj));
                 }
             } catch (err) {
-                document.getElementById('status').innerText = "Status: Connecting to bird mind...";
+                document.getElementById('status').innerText = "Status: Connecting to chicken mind...";
             }
         }
 
         setInterval(fetchAgentData, 5000);
-        fetchAgentData();
-
-        // Walking Navigation & Leg Animation Loop
-        let clock = new THREE.Clock();
-        let currentPos = new THREE.Vector3(0, 0, 0);
-        let targetPos = new THREE.Vector3(12, 0, 12);
-        let moveTimer = 0;
-
-        function animate() {
-            requestAnimationFrame(animate);
-            let time = clock.getElapsedTime();
-
-            // Pick random walking destination across the grid
-            moveTimer += 0.01;
-            if (moveTimer > 7) {
-                moveTimer = 0;
-                targetPos.set((Math.random() - 0.5) * 45, 0, (Math.random() - 0.5) * 45);
-            }
-
-            // Smooth walking movement toward target coordinate
-            currentPos.lerp(targetPos, 0.018);
-            birdGroup.position.copy(currentPos);
-
-            // Turn smoothly toward walking direction
-            let dx = targetPos.x - birdGroup.position.x;
-            let dz = targetPos.z - birdGroup.position.z;
-            if (Math.abs(dx) > 0.1 || Math.abs(dz) > 0.1) {
-                birdGroup.rotation.y = Math.atan2(dx, dz);
-            }
-
-            // Walking stride animation (legs swing back and forth, body bops up and down)
-            let walkSpeed = 15;
-            leftLeg.rotation.x = Math.sin(time * walkSpeed) * 0.5;
-            rightLeg.rotation.x = -Math.sin(time * walkSpeed) * 0.5;
-            birdGroup.position.y = Math.abs(Math.sin(time * walkSpeed)) * 0.15; // little hop/step
-
-            // Camera Handling
-            if (isBirdPOV) {
-                let headPos = new THREE.Vector3();
-                head.getWorldPosition(headPos);
-                camera.position.copy(headPos).add(new THREE.Vector3(0, 0.2, 0.5));
-                let lookAhead = headPos.clone().add(new THREE.Vector3(Math.sin(birdGroup.rotation.y)*10, 0, Math.cos(birdGroup.rotation.y)*10));
-                camera.lookAt(lookAhead);
-            } else {
-                controls.update();
-            }
-
-            renderer.render(scene, camera);
-        }
-        animate();
-
-        window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-        });
-    </script>
-</body>
-</html>
