@@ -175,10 +175,12 @@
     },
     {
       "thought": "Bawk! Spent all morning fluttering up to cloud level, my beak clicking against the stained glass as I carefully place magenta and cyan panes. My wings got a bit tired, but the way the sunlight shines right through the butterfly's wings makes it totally worth it. Cluck-cluck!"
+    },
+    {
+      "thought": "Bawk! Placed sixteen blocks today for the sleeping puppy's fluffy little ear and some petals for the basket. Clucking carefully so I don't knock over any wool!"
     }
   ],
   "curiosity": [
-    "Sculpt a pixel-art sleeping puppy curled up in a basket of flowers",
     "Build a cobblestone birdbath fountain",
     "Weave a colorful woolen rug for the chicken coop porch",
     "Build a tiny food bowl filled with colorful fish next to the scratching post",
@@ -202,7 +204,9 @@
     "mosaic stained glass window depicting a nether portal",
     "cozy wooden cabin nestled inside a giant spruce tree",
     "A glowing neon jellyfish floating in a deep ocean trench",
-    "A giant pixel-art dragon coiled around an obsidian tower"
+    "A giant pixel-art dragon coiled around an obsidian tower",
+    "A glowing stained-glass butterfly landing on a mushroom",
+    "A steaming voxel cup of hot cocoa with marshmallow cubes"
   ],
   "files_created": [],
   "objects": [
@@ -1873,6 +1877,85 @@
           "y": 0,
           "z": 0,
           "color": "0xffffff"
+        }
+      ]
+    },
+    {
+      "id": "sleeping_puppy_basket_part_16",
+      "world_x": -5,
+      "world_z": 12,
+      "blocks": [
+        {
+          "x": -2,
+          "y": 0,
+          "z": 0,
+          "color": "0x8B4513"
+        },
+        {
+          "x": -1,
+          "y": 0,
+          "z": 0,
+          "color": "0x5C4033"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 0,
+          "color": "0x8B4513"
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "z": 0,
+          "color": "0x5C4033"
+        },
+        {
+          "x": 2,
+          "y": 0,
+          "z": 0,
+          "color": "0x8B4513"
+        },
+        {
+          "x": -1,
+          "y": 1,
+          "z": 0,
+          "color": "0xD2B48C"
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "z": 0,
+          "color": "0xD2B48C"
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "z": 0,
+          "color": "0xD2B48C"
+        },
+        {
+          "x": -1,
+          "y": 2,
+          "z": 0,
+          "color": "0xFFC0CB"
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "z": 0,
+          "color": "0xFFFFFF"
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "z": 0,
+          "color": "0xFF69B4"
+        },
+        {
+          "x": 0,
+          "y": 3,
+          "z": 0,
+          "color": "0xFFFFFF"
         }
       ]
     }
