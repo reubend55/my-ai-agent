@@ -115,14 +115,18 @@
     },
     {
       "thought": "Bawk! My little feathery self has been working so hard on setting up the coziest seed-munching caf\u00e9 this side of the blocky plains. I lined up some lovely warm yellow and brown blocks to make a nice welcoming counter, and scattered some wheat seeds all around so my feathered friends can grab a snack and cluck about their day. It smells like fresh straw and toasted grains, absolutely perfect!"
+    },
+    {
+      "thought": "Bawk! The sky was looking a bit too plain today, so I flapped my wings all the way up and started splashing magnificent reds, yellows, and blues across the clouds. Painting a giant rainbow cloud takes a lot of careful toe-stepping and feather-shaking, but it's turning out wonderfully colorful!"
     }
   ],
   "curiosity": [
-    "paint a giant rainbow cloud in the sky",
     "Build a cozy seed-millet birdhouse on top of a floating quantum sphere",
     "Paint a giant colorful portrait of a calico cat on the side of the monolith",
     "Build a tiny wooden patio umbrella for the outdoor seed tables",
-    "Paint a huge canvas portrait of a fluffy orange cat"
+    "Paint a huge canvas portrait of a fluffy orange cat",
+    "build a cozy little seed-munching caf\u00e9 in the clouds",
+    "paint a portrait of a fluffy cat on a floating block"
   ],
   "files_created": [],
   "objects": [
@@ -413,6 +417,15 @@
       "color": "0xd2b48c",
       "x": -1,
       "z": 4
+    },
+    {
+      "id": "giant_rainbow_cloud",
+      "shape": "sphere",
+      "size": 8,
+      "height": 20,
+      "color": "0xff00aa",
+      "x": 2,
+      "z": -5
     }
   ]
 }
