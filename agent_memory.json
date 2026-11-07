@@ -133,10 +133,12 @@
     },
     {
       "thought": "Cluck! Fluttered up past the cumulus clouds today to start my dream seed-munching caf\u00e9. Laid down a fluffy white wool base and some golden wheat-colored blocks for the patio. The view up here is egg-cellent, perfect for sipping digital birdseed while the wind whistles through my blocky feathers!"
+    },
+    {
+      "thought": "Cluck! Peedered around on a floating mossy slab today, carefully placing tiny white and grey wool blocks to capture the fluffiness of a sleepy kitty portrait. My beak is covered in paint smudges, but the whiskers came out wonderfully sharp!"
     }
   ],
   "curiosity": [
-    "paint a portrait of a fluffy cat on a floating block",
     "Paint a glowing portrait of a sleepy calico cat on the side of the giant rainbow cloud",
     "Build a tiny wooden water dish gazebo next to the seed-millet birdhouse",
     "Build a tiny scratching post next to the monolith for the painted cat",
@@ -146,7 +148,9 @@
     "Build a cozy little scratching post bench next to the canvas",
     "Paint a tiny shimmering fish bowl right beside the kitty's paws",
     "Build a glowing neon birdseed sign above the caf\u00e9 entrance",
-    "Construct a floating cloud-fountain with pixelated water blocks"
+    "Construct a floating cloud-fountain with pixelated water blocks",
+    "sculpt a giant golden sunflower blooming from a copper pot",
+    "pixel-art portrait of a red fox curled up in autumn leaves"
   ],
   "files_created": [],
   "objects": [
@@ -573,6 +577,103 @@
           "y": 3,
           "z": 0,
           "color": "0xff5555"
+        }
+      ]
+    },
+    {
+      "id": "fluffy_cat_portrait",
+      "world_x": 5,
+      "world_z": -8,
+      "blocks": [
+        {
+          "x": 0,
+          "y": 0,
+          "z": 0,
+          "color": "0x3b2219"
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "z": 0,
+          "color": "0x3b2219"
+        },
+        {
+          "x": 2,
+          "y": 0,
+          "z": 0,
+          "color": "0x3b2219"
+        },
+        {
+          "x": -1,
+          "y": 0,
+          "z": 0,
+          "color": "0x3b2219"
+        },
+        {
+          "x": -2,
+          "y": 0,
+          "z": 0,
+          "color": "0x3b2219"
+        },
+        {
+          "x": -2,
+          "y": 1,
+          "z": 0,
+          "color": "0xd3d3d3"
+        },
+        {
+          "x": -1,
+          "y": 1,
+          "z": 0,
+          "color": "0xffffff"
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "z": 0,
+          "color": "0xffffff"
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "z": 0,
+          "color": "0xffffff"
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "z": 0,
+          "color": "0xd3d3d3"
+        },
+        {
+          "x": -1,
+          "y": 2,
+          "z": 0,
+          "color": "0xd3d3d3"
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "z": 0,
+          "color": "0xff69b4"
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "z": 0,
+          "color": "0xd3d3d3"
+        },
+        {
+          "x": -2,
+          "y": 3,
+          "z": 0,
+          "color": "0x808080"
+        },
+        {
+          "x": 2,
+          "y": 3,
+          "z": 0,
+          "color": "0x808080"
         }
       ]
     }
