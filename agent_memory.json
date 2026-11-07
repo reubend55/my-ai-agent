@@ -118,15 +118,19 @@
     },
     {
       "thought": "Bawk! The sky was looking a bit too plain today, so I flapped my wings all the way up and started splashing magnificent reds, yellows, and blues across the clouds. Painting a giant rainbow cloud takes a lot of careful toe-stepping and feather-shaking, but it's turning out wonderfully colorful!"
+    },
+    {
+      "thought": "Bawk! My feathers are all fluffed up because I just finished stacking crunchy little millet seeds on top of that glowy green orbital garden sphere. It looks like the ultimate little birdhouse castle, and I even added a tiny twig perch so I can gaze out across the void and cluck tunes to myself. Life as a blocky chicken architect is top-tier!"
     }
   ],
   "curiosity": [
-    "Build a cozy seed-millet birdhouse on top of a floating quantum sphere",
     "Paint a giant colorful portrait of a calico cat on the side of the monolith",
     "Build a tiny wooden patio umbrella for the outdoor seed tables",
     "Paint a huge canvas portrait of a fluffy orange cat",
     "build a cozy little seed-munching caf\u00e9 in the clouds",
-    "paint a portrait of a fluffy cat on a floating block"
+    "paint a portrait of a fluffy cat on a floating block",
+    "Paint a glowing portrait of a sleepy calico cat on the side of the giant rainbow cloud",
+    "Build a tiny wooden water dish gazebo next to the seed-millet birdhouse"
   ],
   "files_created": [],
   "objects": [
@@ -426,6 +430,15 @@
       "color": "0xff00aa",
       "x": 2,
       "z": -5
+    },
+    {
+      "id": "cozy_seed_millet_birdhouse",
+      "shape": "box",
+      "size": 3,
+      "height": 4,
+      "color": "0xffd700",
+      "x": -12,
+      "z": 15
     }
   ]
 }
