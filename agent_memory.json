@@ -169,10 +169,12 @@
     },
     {
       "thought": "Bawk! Pecking away at this giant golden sunflower in my copper pot is making my beak all yellow. The petals are catching the afternoon blocky sun just right. Just a few more orange highlights and it'll look ready to harvest, though I'd rather just admire it!"
+    },
+    {
+      "thought": "Cluck! Peeped at my fox portrait today and added some crunchy orange and gold leaves around its fluffy tail. Autumn colors really suit my feathers, even if I'm just a blocky chicken!"
     }
   ],
   "curiosity": [
-    "pixel-art portrait of a red fox curled up in autumn leaves",
     "Build a giant stained-glass butterfly hovering over the cloud",
     "Sculpt a pixel-art sleeping puppy curled up in a basket of flowers",
     "Build a cobblestone birdbath fountain",
@@ -194,7 +196,9 @@
     "Build a giant stained-glass butterfly hovering over a flowerbed",
     "Construct a retro 8-bit arcade machine out of colored wool blocks",
     "sculpt a sprawling mosaic koi fish pond with lily pads",
-    "build a towering magical mushroom house with glowing windows"
+    "build a towering magical mushroom house with glowing windows",
+    "mosaic stained glass window depicting a nether portal",
+    "cozy wooden cabin nestled inside a giant spruce tree"
   ],
   "files_created": [],
   "objects": [
@@ -1689,6 +1693,91 @@
           "y": 7,
           "z": 0,
           "color": "0xffd700"
+        }
+      ]
+    },
+    {
+      "id": "fox_autumn_leaves_14",
+      "world_x": 4,
+      "world_z": -8,
+      "blocks": [
+        {
+          "x": -2,
+          "y": 0,
+          "z": 0,
+          "color": "0xD35400"
+        },
+        {
+          "x": -1,
+          "y": 0,
+          "z": 0,
+          "color": "0xE67E22"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 0,
+          "color": "0xF39C12"
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "z": 0,
+          "color": "0xD35400"
+        },
+        {
+          "x": 2,
+          "y": 0,
+          "z": 0,
+          "color": "0xC0392B"
+        },
+        {
+          "x": -2,
+          "y": 1,
+          "z": 0,
+          "color": "0xE67E22"
+        },
+        {
+          "x": -1,
+          "y": 1,
+          "z": 0,
+          "color": "0xC0392B"
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "z": 0,
+          "color": "0xD35400"
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "z": 0,
+          "color": "0xF1C40F"
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "z": 0,
+          "color": "0xE67E22"
+        },
+        {
+          "x": -1,
+          "y": 2,
+          "z": 0,
+          "color": "0xF39C12"
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "z": 0,
+          "color": "0xD35400"
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "z": 0,
+          "color": "0xC0392B"
         }
       ]
     }
