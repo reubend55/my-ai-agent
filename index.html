@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Minecraft Chicken AI World</title>
+    <title>Minecraft World AI</title>
     <style>
-        body { margin: 0; overflow: hidden; background: #050510; font-family: monospace; }
+        body { margin: 0; overflow: hidden; background: #87CEEB; font-family: monospace; }
         #canvas-container { width: 100vw; height: 100vh; display: block; }
         
         #ui-overlay {
@@ -13,10 +13,10 @@
             left: 20px;
             width: 400px;
             max-height: 90vh;
-            background: rgba(10, 10, 20, 0.94);
-            border: 1px solid #00ffcc;
-            box-shadow: 0 0 25px rgba(0, 255, 204, 0.3);
-            color: #00ffcc;
+            background: rgba(20, 20, 30, 0.88);
+            border: 2px solid #55ff55;
+            box-shadow: 0 0 20px rgba(85, 255, 85, 0.3);
+            color: #55ff55;
             padding: 15px;
             box-sizing: border-box;
             border-radius: 8px;
@@ -24,12 +24,12 @@
             flex-direction: column;
             pointer-events: auto;
         }
-        h2 { margin: 0 0 10px 0; font-size: 15px; text-transform: uppercase; border-bottom: 1px solid #00ffcc; padding-bottom: 5px; }
-        #status { font-size: 11px; color: #ff00ff; margin-bottom: 10px; }
+        h2 { margin: 0 0 10px 0; font-size: 15px; text-transform: uppercase; border-bottom: 1px solid #55ff55; padding-bottom: 5px; }
+        #status { font-size: 11px; color: #ff55ff; margin-bottom: 10px; }
         
         .btn {
-            background: #00ffcc;
-            color: #050510;
+            background: #55ff55;
+            color: #111;
             border: none;
             padding: 8px 12px;
             font-weight: bold;
@@ -39,7 +39,7 @@
             text-transform: uppercase;
             font-size: 11px;
         }
-        .btn:hover { background: #00cc99; }
+        .btn:hover { background: #33cc33; }
 
         #command-box {
             display: flex;
@@ -47,9 +47,9 @@
         }
         #user-input {
             flex-grow: 1;
-            background: #050510;
-            border: 1px solid #00ffcc;
-            color: #00ffcc;
+            background: #111;
+            border: 1px solid #55ff55;
+            color: #55ff55;
             padding: 6px;
             font-family: monospace;
             font-size: 11px;
@@ -57,8 +57,8 @@
             outline: none;
         }
         #send-btn {
-            background: #00ffcc;
-            color: #050510;
+            background: #55ff55;
+            color: #111;
             border: none;
             padding: 6px 10px;
             font-weight: bold;
@@ -66,7 +66,7 @@
             border-radius: 0 4px 4px 0;
             font-size: 11px;
         }
-        #send-btn:hover { background: #00cc99; }
+        #send-btn:hover { background: #33cc33; }
 
         #thought-log {
             overflow-y: auto;
@@ -75,15 +75,15 @@
             padding-right: 5px;
         }
         .thought-entry {
-            background: rgba(0, 255, 204, 0.05);
-            border-left: 2px solid #00ffcc;
+            background: rgba(85, 255, 85, 0.08);
+            border-left: 2px solid #55ff55;
             padding: 8px;
             margin-bottom: 10px;
             font-size: 12px;
             line-height: 1.4;
-            color: #d1d5db;
+            color: #e0e0e0;
         }
-        .thought-entry span { color: #00ffcc; font-weight: bold; display: block; margin-bottom: 3px; }
+        .thought-entry span { color: #55ff55; font-weight: bold; display: block; margin-bottom: 3px; }
     </style>
 </head>
 <body>
@@ -94,7 +94,7 @@
         <button class="btn" id="cam-toggle">Switch to Chicken POV</button>
         
         <div id="command-box">
-            <input type="text" id="user-input" placeholder="Tell the chicken what to build or paint..." />
+            <input type="text" id="user-input" placeholder="Tell the chicken what to build..." />
             <button id="send-btn">Send</button>
         </div>
 
@@ -108,11 +108,12 @@
 
     <script>
         const scene = new THREE.Scene();
-        scene.background = new THREE.Color(0x050510);
-        scene.fog = new THREE.FogExp2(0x050510, 0.01);
+        // Minecraft Sky Blue with soft fog
+        scene.background = new THREE.Color(0x87CEEB);
+        scene.fog = new THREE.FogExp2(0x87CEEB, 0.008);
 
         const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
-        camera.position.set(0, 15, 25);
+        camera.position.set(0, 18, 28);
 
         const renderer = new THREE.WebGLRenderer({ antialias: true });
         renderer.setSize(window.innerWidth, window.innerHeight);
@@ -121,17 +122,16 @@
         const controls = new THREE.OrbitControls(camera, renderer.domElement);
         controls.enableDamping = true;
 
-        // Lighting
-        scene.add(new THREE.AmbientLight(0xffffff, 0.7));
-        const sun = new THREE.DirectionalLight(0xffffff, 1.0);
-        sun.position.set(30, 60, 30);
+        // Bright daylight lighting
+        scene.add(new THREE.AmbientLight(0xffffff, 0.8));
+        const sun = new THREE.DirectionalLight(0xffffff, 0.9);
+        sun.position.set(40, 80, 40);
         scene.add(sun);
 
-        // Grid & Floor
-        scene.add(new THREE.GridHelper(120, 60, 0x00ffcc, 0x16162c));
+        // Minecraft Grass Ground (Green plane instead of dark grid void)
         const floor = new THREE.Mesh(
-            new THREE.PlaneGeometry(120, 120),
-            new THREE.MeshStandardMaterial({ color: 0x070714, roughness: 0.9 })
+            new THREE.PlaneGeometry(150, 150),
+            new THREE.MeshStandardMaterial({ color: 0x559933, roughness: 0.9 })
         );
         floor.rotation.x = -Math.PI / 2;
         scene.add(floor);
@@ -139,7 +139,7 @@
         // --- BUILD THE MINECRAFT CHICKEN ENTITY ---
         const chickenGroup = new THREE.Group();
 
-        const bodyMat = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.5 });
+        const bodyMat = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.4 });
         const body = new THREE.Mesh(new THREE.BoxGeometry(1.2, 1.0, 1.6), bodyMat);
         body.position.y = 1.0;
         chickenGroup.add(body);
@@ -203,7 +203,7 @@
         sendBtn.addEventListener('click', sendCommand);
         userInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') sendCommand(); });
 
-        // Spawned World Objects
+        // Spawned World Objects (Blocky structures)
         const spawnedObjects = new Set();
 
         function spawnObject(data) {
@@ -212,17 +212,17 @@
 
             let geo;
             if (data.shape === "box") geo = new THREE.BoxGeometry(data.size || 3, data.size || 3, data.size || 3);
-            else if (data.shape === "cylinder") geo = new THREE.CylinderGeometry(1.5, 1.5, data.height || 4, 24);
-            else geo = new THREE.SphereGeometry(2, 24, 24);
+            else if (data.shape === "cylinder") geo = new THREE.CylinderGeometry(1.5, 1.5, data.height || 4, 16);
+            else geo = new THREE.SphereGeometry(2, 16, 16);
 
-            let colorHex = parseInt(data.color) || 0x00ffcc;
-            const mat = new THREE.MeshStandardMaterial({ color: colorHex, roughness: 0.3, metalness: 0.5 });
+            let colorHex = parseInt(data.color) || 0xffffff;
+            const mat = new THREE.MeshStandardMaterial({ color: colorHex, roughness: 0.4 });
             const mesh = new THREE.Mesh(geo, mat);
             mesh.position.set(data.x || 0, (data.size || 3)/2, data.z || 0);
             scene.add(mesh);
         }
 
-        // Fetch Memory Live with Debug Logging
+        // Fetch Memory Live
         async function fetchAgentData() {
             try {
                 const response = await fetch('./agent_memory.json?_=' + new Date().getTime());
@@ -267,7 +267,7 @@
             moveTimer += 0.008;
             if (moveTimer > 6) {
                 moveTimer = 0;
-                targetPos.set((Math.random() - 0.5) * 30, 0, (Math.random() - 0.5) * 30);
+                targetPos.set((Math.random() - 0.5) * 35, 0, (Math.random() - 0.5) * 35);
             }
 
             currentPos.lerp(targetPos, 0.008);
