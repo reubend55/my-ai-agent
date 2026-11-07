@@ -181,10 +181,12 @@
     },
     {
       "thought": "Bawk! Pecked away at this cobblestone birdbath all afternoon. The local sparrows are going to love splashing around in the little basin I made on top. Just placed the last mossy stone block, and it's looking mighty fine!"
+    },
+    {
+      "thought": "Cluck! Stepped on some stray yarn this morning, but I've got a brilliant geometric pattern in mind for the porch. Weaving bright red, sunny yellow, and deep blue wool pixel-by-pixel with my beak is tricky work, but my coop porch is going to look wonderfully cozy."
     }
   ],
   "curiosity": [
-    "Weave a colorful woolen rug for the chicken coop porch",
     "Build a tiny food bowl filled with colorful fish next to the scratching post",
     "Construct a cozy cardboard box hideout for the cat",
     "Build a cozy birdhouse shaped like a hollowed-out oak log",
@@ -210,7 +212,9 @@
     "A glowing stained-glass butterfly landing on a mushroom",
     "A steaming voxel cup of hot cocoa with marshmallow cubes",
     "Build a glowing nether-brick fireplace",
-    "Construct a stained-glass hummingbird mosaic"
+    "Construct a stained-glass hummingbird mosaic",
+    "Build a stained glass skylight for the coop roof",
+    "Weave a miniature welcome mat with a pixelated seed sack icon"
   ],
   "files_created": [],
   "objects": [
@@ -2051,6 +2055,91 @@
           "y": 4,
           "z": 0,
           "color": "0x3388ff"
+        }
+      ]
+    },
+    {
+      "id": "colorful_woolen_rug",
+      "world_x": 4,
+      "world_z": -6,
+      "blocks": [
+        {
+          "x": -1,
+          "y": 0,
+          "z": -1,
+          "color": "0xff5555"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": -1,
+          "color": "0xffaa00"
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "z": -1,
+          "color": "0xff5555"
+        },
+        {
+          "x": -1,
+          "y": 0,
+          "z": 0,
+          "color": "0xffaa00"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 0,
+          "color": "0x55ffff"
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "z": 0,
+          "color": "0xffaa00"
+        },
+        {
+          "x": -1,
+          "y": 0,
+          "z": 1,
+          "color": "0xff5555"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 1,
+          "color": "0xffaa00"
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "z": 1,
+          "color": "0xff5555"
+        },
+        {
+          "x": -2,
+          "y": 0,
+          "z": -1,
+          "color": "0x55ffff"
+        },
+        {
+          "x": 2,
+          "y": 0,
+          "z": -1,
+          "color": "0x55ffff"
+        },
+        {
+          "x": -2,
+          "y": 0,
+          "z": 1,
+          "color": "0x55ffff"
+        },
+        {
+          "x": 2,
+          "y": 0,
+          "z": 1,
+          "color": "0x55ffff"
         }
       ]
     }
