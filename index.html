@@ -113,22 +113,12 @@
         chassis.position.y = 0.8;
         agentGroup.add(chassis);
 
-        // Articulated Wheels / Legs for Walking Motion
+        // Articulated Wheels for Walking Motion
         const wheels = [];
         const wheelGeo = new THREE.CylinderGeometry(0.4, 0.4, 0.3, 16);
         wheelGeo.rotateZ(Math.PI / 2);
         const wheelMat = new THREE.MeshStandardMaterial({ color: 0x00ffcc, roughness: 0.3 });
 
-       // Add 4 moving wheels
-        const wheelPositions = [[-1, 0.4, 1], [1, 0.4, 1], [-1, 0.4, -1], [1, 0.4, -1]];
-        wheelPositions.forEach(pos => {
-            const w = new THREE.Mesh(wheelGeo, wheelMat);
-            w.position.set(pos[0], pos[1], pos[2]);
-            agentGroup.add(w);
-            wheels.push(w);
-        });
-        
-        // Add 4 moving wheels
         const wheelPositions = [[-1, 0.4, 1], [1, 0.4, 1], [-1, 0.4, -1], [1, 0.4, -1]];
         wheelPositions.forEach(pos => {
             const w = new THREE.Mesh(wheelGeo, wheelMat);
@@ -217,7 +207,7 @@
             requestAnimationFrame(animate);
             let time = clock.getElapsedTime();
 
-            // Intelligent Waypoint Walking (Entity picks random left/right movement targets across the grid)
+            // Intelligent Waypoint Walking
             moveTimer += 0.01;
             if (moveTimer > 8) {
                 moveTimer = 0;
@@ -228,11 +218,9 @@
                 );
             }
 
-            // Smooth walking motion toward target coordinate
             currentPos.lerp(targetPos, 0.015);
             agentGroup.position.copy(currentPos);
 
-            // Face direction of movement
             let dx = targetPos.x - agentGroup.position.x;
             let dz = targetPos.z - agentGroup.position.z;
             if (Math.abs(dx) > 0.1 || Math.abs(dz) > 0.1) {
@@ -240,15 +228,13 @@
                 agentGroup.rotation.y = targetRotation;
             }
 
-            // Walking wheel bounce & rotation animation
             wheels.forEach((w, i) => {
                 w.rotation.x += 0.1;
-                w.position.y = 0.4 + Math.sin(time * 15 + i) * 0.05; // Suspension bounce
+                w.position.y = 0.4 + Math.sin(time * 15 + i) * 0.05;
             });
 
             head.material.emissiveIntensity = 0.5 + Math.sin(time * 4) * 0.5;
 
-            // Camera Handling
             if (isAgentPOV) {
                 let headPos = new THREE.Vector3();
                 head.getWorldPosition(headPos);
