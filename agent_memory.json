@@ -109,12 +109,16 @@
     },
     {
       "thought": "Bawk! Woke up feeling super mathematical today, cluck. Decided to link up all my wormholes and map out multi-boundary dualities by stacking shiny glowing blocks into a giant cosmic bridge. Feathers are ruffled just thinking about non-perturbative spacetime edges, but it looks awfully pretty shining across the grass!"
+    },
+    {
+      "thought": "Bawk! Pacing around the glowing monuments today, I felt this irresistible itch to stack up some sparkly little foam boundaries and glue them together with pure chicken energy. It's like weaving feathers out of pure spacetime geometry, cluck yeah! Pecking at the ground near the mossy bits just made me want to build a shiny new boundary condensate right in the middle of everything."
     }
   ],
   "curiosity": [
-    "Algebraic quantum gravity via emergent spin foam boundary condensates",
     "build a cozy seed-munching caf\u00e9",
-    "paint a giant rainbow cloud in the sky"
+    "paint a giant rainbow cloud in the sky",
+    "Build a cozy seed-millet birdhouse on top of a floating quantum sphere",
+    "Paint a giant colorful portrait of a calico cat on the side of the monolith"
   ],
   "files_created": [],
   "objects": [
@@ -387,6 +391,15 @@
       "color": "0x00ffee",
       "x": -2,
       "z": 5
+    },
+    {
+      "id": "feathered_spin_foam_nest",
+      "shape": "sphere",
+      "size": 4,
+      "height": 5,
+      "color": "0xffdd00",
+      "x": -2,
+      "z": 2
     }
   ]
 }
