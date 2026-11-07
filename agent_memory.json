@@ -178,10 +178,12 @@
     },
     {
       "thought": "Bawk! Placed sixteen blocks today for the sleeping puppy's fluffy little ear and some petals for the basket. Clucking carefully so I don't knock over any wool!"
+    },
+    {
+      "thought": "Bawk! Pecked away at this cobblestone birdbath all afternoon. The local sparrows are going to love splashing around in the little basin I made on top. Just placed the last mossy stone block, and it's looking mighty fine!"
     }
   ],
   "curiosity": [
-    "Build a cobblestone birdbath fountain",
     "Weave a colorful woolen rug for the chicken coop porch",
     "Build a tiny food bowl filled with colorful fish next to the scratching post",
     "Construct a cozy cardboard box hideout for the cat",
@@ -206,7 +208,9 @@
     "A glowing neon jellyfish floating in a deep ocean trench",
     "A giant pixel-art dragon coiled around an obsidian tower",
     "A glowing stained-glass butterfly landing on a mushroom",
-    "A steaming voxel cup of hot cocoa with marshmallow cubes"
+    "A steaming voxel cup of hot cocoa with marshmallow cubes",
+    "Build a glowing nether-brick fireplace",
+    "Construct a stained-glass hummingbird mosaic"
   ],
   "files_created": [],
   "objects": [
@@ -1956,6 +1960,97 @@
           "y": 3,
           "z": 0,
           "color": "0xFFFFFF"
+        }
+      ]
+    },
+    {
+      "id": "cobblestone_birdbath_fountain",
+      "world_x": -6,
+      "world_z": 14,
+      "blocks": [
+        {
+          "x": 0,
+          "y": 0,
+          "z": 0,
+          "color": "0x555555"
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "z": 0,
+          "color": "0x777777"
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "z": 0,
+          "color": "0x777777"
+        },
+        {
+          "x": 0,
+          "y": 3,
+          "z": 0,
+          "color": "0x555555"
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "z": 0,
+          "color": "0x555555"
+        },
+        {
+          "x": -1,
+          "y": 3,
+          "z": 0,
+          "color": "0x555555"
+        },
+        {
+          "x": 0,
+          "y": 3,
+          "z": 1,
+          "color": "0x555555"
+        },
+        {
+          "x": 0,
+          "y": 3,
+          "z": -1,
+          "color": "0x555555"
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "z": 1,
+          "color": "0x555555"
+        },
+        {
+          "x": -1,
+          "y": 3,
+          "z": -1,
+          "color": "0x555555"
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "z": -1,
+          "color": "0x555555"
+        },
+        {
+          "x": -1,
+          "y": 3,
+          "z": 1,
+          "color": "0x555555"
+        },
+        {
+          "x": 0,
+          "y": 3,
+          "z": 0,
+          "color": "0x3388ff"
+        },
+        {
+          "x": 0,
+          "y": 4,
+          "z": 0,
+          "color": "0x3388ff"
         }
       ]
     }
