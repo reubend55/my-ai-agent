@@ -139,30 +139,25 @@
         // --- BUILD THE MINECRAFT CHICKEN ENTITY ---
         const chickenGroup = new THREE.Group();
 
-        // Blocky MC White Body
         const bodyMat = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.5 });
         const body = new THREE.Mesh(new THREE.BoxGeometry(1.2, 1.0, 1.6), bodyMat);
         body.position.y = 1.0;
         chickenGroup.add(body);
 
-        // Blocky MC Head
         const head = new THREE.Mesh(new THREE.BoxGeometry(0.8, 0.8, 0.8), bodyMat);
         head.position.set(0, 1.7, 0.7);
         chickenGroup.add(head);
 
-        // Orange Beak
         const beakMat = new THREE.MeshStandardMaterial({ color: 0xffaa00 });
         const beak = new THREE.Mesh(new THREE.BoxGeometry(0.4, 0.3, 0.4), beakMat);
         beak.position.set(0, 1.6, 1.15);
         chickenGroup.add(beak);
 
-        // Red Wattle / Comb
         const redMat = new THREE.MeshStandardMaterial({ color: 0xff0000 });
         const comb = new THREE.Mesh(new THREE.BoxGeometry(0.2, 0.3, 0.5), redMat);
         comb.position.set(0, 2.2, 0.7);
         chickenGroup.add(comb);
 
-        // Yellow Blocky Legs
         const legGeo = new THREE.BoxGeometry(0.2, 0.8, 0.2);
         const leftLeg = new THREE.Mesh(legGeo, beakMat);
         leftLeg.position.set(-0.35, 0.4, 0);
@@ -191,7 +186,7 @@
         async function sendCommand() {
             let cmd = userInput.value.trim();
             if (!cmd) return;
-            document.getElementById('status').innerText = "Status: Transmitting to MC chicken...";
+            document.getElementById('status').innerText = "Status: Transmitting instruction...";
             try {
                 const res = await fetch('./agent_memory.json?_=' + new Date().getTime());
                 let memory = await res.json();
@@ -200,9 +195,9 @@
                 if (!memory.history) memory.history = [];
                 memory.history.push({ thought: "[CHICKEN INSTRUCTION]: " + cmd });
                 userInput.value = "";
-                document.getElementById('status').innerText = "Status: Chicken heard you!";
+                document.getElementById('status').innerText = "Status: Instruction queued!";
             } catch (err) {
-                alert("Make sure local python server is running!");
+                console.error("Command error:", err);
             }
         }
         sendBtn.addEventListener('click', sendCommand);
@@ -227,11 +222,11 @@
             scene.add(mesh);
         }
 
-        // Fetch Memory Live
+        // Fetch Memory Live with Debug Logging
         async function fetchAgentData() {
             try {
                 const response = await fetch('./agent_memory.json?_=' + new Date().getTime());
-                if (!response.ok) throw new Error();
+                if (!response.ok) throw new Error("HTTP error! status: " + response.status);
                 const memory = await response.json();
 
                 document.getElementById('status').innerText = "Status: MC Chicken Wandering Active";
@@ -251,8 +246,71 @@
                     memory.objects.forEach(obj => spawnObject(obj));
                 }
             } catch (err) {
-                document.getElementById('status').innerText = "Status: Connecting to chicken mind...";
+                console.error("DEBUG FETCH ERROR:", err);
+                document.getElementById('status').innerText = "Status: Check F12 Console";
             }
         }
 
         setInterval(fetchAgentData, 5000);
+        fetchAgentData();
+
+        // Movement Loop
+        let clock = new THREE.Clock();
+        let currentPos = new THREE.Vector3(0, 0, 0);
+        let targetPos = new THREE.Vector3(8, 0, 8);
+        let moveTimer = 0;
+
+        function animate() {
+            requestAnimationFrame(animate);
+            let time = clock.getElapsedTime();
+
+            moveTimer += 0.008;
+            if (moveTimer > 6) {
+                moveTimer = 0;
+                targetPos.set((Math.random() - 0.5) * 30, 0, (Math.random() - 0.5) * 30);
+            }
+
+            currentPos.lerp(targetPos, 0.008);
+            chickenGroup.position.copy(currentPos);
+
+            let dx = targetPos.x - chickenGroup.position.x;
+            let dz = targetPos.z - chickenGroup.position.z;
+            if (Math.abs(dx) > 0.2 || Math.abs(dz) > 0.2) {
+                let targetRot = Math.atan2(dx, dz);
+                chickenGroup.rotation.y += (targetRot - chickenGroup.rotation.y) * 0.05;
+            }
+
+            let isMoving = currentPos.distanceTo(targetPos) > 0.5;
+            if (isMoving) {
+                leftLeg.rotation.x = Math.sin(time * 8) * 0.4;
+                rightLeg.rotation.x = -Math.sin(time * 8) * 0.4;
+                chickenGroup.position.y = Math.abs(Math.sin(time * 16)) * 0.1;
+            } else {
+                leftLeg.rotation.x = 0;
+                rightLeg.rotation.x = 0;
+                chickenGroup.position.y = 0;
+            }
+
+            head.rotation.x = Math.sin(time * 3) > 0.7 ? 0.4 : 0;
+            beak.position.y = head.position.y + (head.rotation.x > 0 ? -0.1 : 0);
+
+            if (isChickenPOV) {
+                camera.position.set(chickenGroup.position.x, chickenGroup.position.y + 1.8, chickenGroup.position.z + 0.5);
+                let lookAhead = chickenGroup.position.clone().add(new THREE.Vector3(Math.sin(chickenGroup.rotation.y)*10, 1.5, Math.cos(chickenGroup.rotation.y)*10));
+                camera.lookAt(lookAhead);
+            } else {
+                controls.update();
+            }
+
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+    </script>
+</body>
+</html>
